@@ -1,0 +1,69 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js"></script>
+<!-- <script src="https://s3.amazonaws.com/sesame-test-content/global_images/product_tiles/shared-functions.js"></script> -->
+<script src="../js/shared-functions.js"></script>
+<script src="../js/hero-banner.js"></script>
+
+<link href="../css/shared.css" type="text/css" rel="stylesheet" /> 
+<link href="../css/hero-banner.css" type="text/css" rel="stylesheet" /> 
+
+	
+<div class="hero-banner ortho-sesame" >
+	<div class="title" id="ortho-sesame">Dental Sesame</div>
+	
+	<div class="banner-col-wrapper">
+		<div class="banner-col">
+			<div class="header">Daily Appointments (last 7 days)</div>
+			<div id="appt-bars" style="max-width:345px;height:170px;"></div>
+		</div>
+		
+		<div class="banner-col">
+			<div class="header">Appt. Reminders Sent by Type (yesterday)</div>
+			<div id="today-msg-bars" style="max-width:345px;height:147px;"></div>
+		</div>
+		
+		<div class="banner-col">
+			<div class="header">Confirmation By Type (last 30 days)</div>
+			<div id="confirm-msg-bars" style="max-width:345px;height:165px;"></div>
+		</div>
+		
+		<div class="banner-col">
+			<div class="header patient-reminder-header">
+				Patient Reminders (last 30 days)
+			</div>
+			<div class="header patient-reminder-legends">
+				<span class="patient-reminder-legend">
+					<span style="width:12px;height:12px;display:inline-block;background:#06577A"></span>
+					Confirmed
+				</span>
+				<span class="patient-reminder-legend">
+					<span style="width:12px;height:12px;display:inline-block;background:#00A7E5"></span>
+					Not Confirmed
+				</span>
+				<span class="patient-reminder-legend">
+					<span style="width:12px;height:12px;display:inline-block;background:#E6ED64"></span>
+					Not Reminded
+				</span>
+			</div>
+			
+			<div id="patient-reminder" style="width:345px;height:170px;float:left;"></div>
+			<!-- <div id="today-patient-reminder" style="width:60px;height:170px;float:left;"></div> -->
+		</div>
+	</div>
+</div>
+
+
+<script>
+$(document).ready(function() {
+	var qryStr = getUrlVars();
+	drawApptBars(qryStr);
+	drawTodayMsg(qryStr);
+	drawConfirmationByType(qryStr);
+	drawPatientRemider(qryStr);
+	//drawTodayReminder(qryStr);
+	
+	//$("#ortho-sesame").click({destination: "/#schedule/daily-schedule"}, navigateTo);
+});
+</script>

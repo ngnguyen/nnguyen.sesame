@@ -1,0 +1,142 @@
+<!-- This is html for SEO landing page. The template only have some main div 
+containers. 
+
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="../js/shared-landing.js"></script>
+<script src="../js/seo-landing.js"></script>
+
+<link href="../css/shared-landing.css" rel="stylesheet" type="text/css" />
+<link href="../css/seo-landing.css" rel="stylesheet" type="text/css" />
+
+<div class="content-wrapper">
+	<table class="kw-table num-col-3">
+		<tr><th>Top keyword Rankings (Google)</th><th>This Month</th><th>Last Month</th></tr>
+		<tr>
+			<td>Braces</td>
+			<td class="this-month">1</td>
+			<td class="last-month">20</td></tr>
+		<tr>
+			<td>Orthodontists</td>
+			<td class="this-month">1</td>
+			<td class="last-month">30</td>
+		</tr>
+		<tr>
+			<td>Teeth Straightening</td>
+			<td class="this-month">1</td>
+			<td class="last-month">40</td>
+		</tr>
+		<tr>
+			<td>Adult Braces</td>
+			<td class="this-month">1</td>
+			<td class="last-month">50</td>
+		</tr>
+		<tr>
+			<td>Best Orthodontists</td>
+			<td class="this-month">5</td>
+			<td class="last-month">60</td>
+		</tr>
+		<tr>
+			<td>Kids Braces</td>
+			<td class="this-month">8</td>
+			<td class="last-month">70</td>
+		</tr>
+		<tr>
+			<td>Keyword</td>
+			<td class="this-month">9</td>
+			<td class="last-month">80</td>
+		</tr>
+		<tr>
+			<td>Keyword</td>
+			<td class="this-month">11</td>
+			<td class="last-month">100</td>
+		</tr>
+	</table>
+	
+	<div class="kw-table-legend">
+		<span>
+			<span class="rect" style="background-color:#b9e7a6;"></span>1-10
+		</span>
+		<span>
+			<span class="rect" style="background-color:#f7f9c9"></span>11-30
+		</span>
+		<span>
+			<span class="rect" style="background-color:#f8dfbb"></span>31-99
+		</span>
+		<span>
+			<span class="rect" style="background-color:#f9c3ac"></span>100+
+		</span>
+	</div>
+</div>
+
+<div id="test-tbl"></div>
+
+<div class="content-wrapper report">
+	<div class="header">
+		<span class="url">
+			<a href="www.overlakefamilydentistry.com" >
+				www.overlakefamilydentistry.com
+			</a>
+		</span>
+		<!--
+		<span>
+			Monthly Report: 
+			<select class="month-picker"></select>
+			<select class="yr-picker"></select>
+			<button class="btn">Go</button>
+		</span>
+		<div class="download-pdf">
+			<span><a href="#">Download PDF</a></span>
+			<img alt="pdf icon" src="../img/pdf_icon.jpg" />
+		</div>
+		-->
+	</div>
+	
+	<div class="title">Sesame Search Report</div>
+	<div class="date">Monthly Report: September 2014</div>
+	
+	<div class="tabs">
+		<span class="tab-wrapper-current"  id="first-call">
+			<span class="tab-top"></span>
+			<span class="tab">Sesame First Call</span>
+			<span class="tab-bottom"></span>
+		</span>
+		<span class="tab-wrapper" id="website-traffic">
+			<span class="tab-top"></span>
+			<span class="tab">Website Traffic</span>
+			<span class="tab-bottom"></span>
+		</span>
+		<span class="tab-wrapper" id="sesame-seo">
+			<span class="tab-top"></span>
+			<span class="tab">Sesame SEO</span>
+			<span class="tab-bottom"></span>
+		</span>
+		<span class="tab-wrapper" id="review-monitor">
+			<span class="tab-top"></span>
+			<span class="tab">Review Monitor</span>
+			<span class="tab-bottom"></span>
+		</span>
+		<span class="tab-wrapper" id="pay-per-click">
+			<span class="tab-top"></span>
+			<span class="tab">Sesame Pay-per-Click</span>
+			<span class="tab-bottom"></span>
+		</span>
+	</div>
+	
+	<div class="tab-content-wrapper" id="first-call-content"></div>
+	
+	<div class="tab-content-wrapper" id="website-traffic-content"></div>
+	
+	<div class="tab-content-wrapper" id="sesame-seo-content"></div>
+	
+	<div class="tab-content-wrapper" id="review-monitor-content"></div>
+	<div class="tab-content-wrapper" id="pay-per-click-content">
+		<div id="campaign-spend"></div>
+		<div id="cpc-over-time" class="line-chart"></div>
+		<div id="campaign-performance"></div>
+		<div id="ctr-over-time" class="line-chart"></div>
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.0.5/js/jquery.tooltipster.min.js"></script>
+<script src="../js/shared-functions.js"></script>
+<script src="../js/website.js"></script>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.0.5/css/tooltipster.css" rel="stylesheet" type="text/css" />
+<link href="../css/tooltipster-custom.css" rel="stylesheet" type="text/css" />
+<link href="../css/shared.css" type="text/css" rel="stylesheet" /> 
+<link href="../css/website.css" type="text/css" rel="stylesheet" /> 
+
+<div class="banner website">
+	<div class="title" id="website">Website</div>
+	
+	<div class="banner-col-wrapper">
+		<div class="banner-col">
+			<div class="header">Daily Visits (last 7 days)</div>
+			<div id="daily-visitor-bars" style="width:349px;height:145px; margin:0;"></div>
+		</div>
+		
+		<div class="banner-col">
+			<div class="header">Top 5 Referring Sites (monthly)</div>
+			<table id="referring-sites">
+				<tr><th></th><th>Current</th><th>Previous</th></tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	//var qryStr = getUrlVars();
+	
+	//drawDailyVisitors(qryStr);
+	//drawTopReferringSites(qryStr);
+	
+	$('.tooltip').tooltipster({ theme: 'tooltipster-custom' });
+	//$("#website").click({destination: "/#websites/websites-statistics"}, navigateTo);
+	
+	$.ajax({
+		url : "http://localhost:9998/website/getDailyVisits/1/2014-1-1/2014-10-19",
+		type: "POST",
+		dataType: 'jsonp',
+		//data : formData,
+		success: function(data, textStatus, jqXHR){
+			console.log(data);
+		},
+		error: function (jqXHR, textStatus, errorThrown){
+			console.log('jqXHR: '+jqXHR);
+			console.log('textStatus: '+textStatus);
+			console.log('errorThrown: '+errorThrown);
+		}
+	});
+});
+</script>

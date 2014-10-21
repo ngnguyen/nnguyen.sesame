@@ -1,0 +1,33 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script src="../js/shared-functions.js"></script>
+<script src="../js/dental-ortho.js"></script>
+
+<link href="../css/shared.css" type="text/css" rel="stylesheet" /> 
+<link href="../css/dental-ortho.css" type="text/css" rel="stylesheet" /> 
+	
+	<div class="banner dental-ortho" >
+		<div class="title" id="dental-ortho">Ortho Sesame</div>
+		<div class="banner-col-wrapper">
+			<div class="banner-col">
+				<div class="header">Daily Appointments (last 7 days)</div>
+				<div id="appt-bars" style="max-width:349px;height:147px;margin-top:0;"></div>
+			</div>
+			<div class="banner-col">
+				<div class="header">Appt. Reminders Sent by Type (yesterday)</div>
+				<div id="today-msg-bars" style="max-width:349px;height:147px;margin:0 auto;"></div>
+			</div>
+		</div>
+	</div>
+	
+<script>
+$(document).ready(function() {
+	var qryStr = getUrlVars();
+	drawApptBars(qryStr);
+	drawTodayMsg(qryStr);
+	
+	//$("#dental-sesame").click({destination: "/#schedule/daily-schedule"}, navigateTo);
+});
+</script>
