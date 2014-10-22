@@ -1,0 +1,68 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js"></script>
+
+<script src="../js/shared-functions.js"></script>
+<script src="../js/unowned.js"></script>
+
+<link href="../css/shared.css" rel="stylesheet" type="text/css" />
+<link href="../css/unowned.css" rel="stylesheet" type="text/css" />
+
+<div class="bottom">
+	<div class="unowned-tile seo">
+		<div class="title" >Learn about SEO</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="marketing-msg">
+				Ensure your practice website ranks high on major search engines by 
+				prospective patients seeking a new dental care provider in your 
+				local area
+			</div>	
+			<div class="click-through">Click here to review features and benefits</div>
+			<div class="logo" >
+				<span>Sesame Seo</span>
+				<span><img src="../img/md-marketing-seo-icon.png" alt="seo icon"/></span>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="top" style="background:#fff;">
+	<div class="unowned-tile seo">
+		<div class="bottom-title" >Learn about SEO</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="banner-col">
+				<div class="header">Top 5 Keyword Rankings (monthly)</div>
+				<table id="kw-ranking">
+					<tr><th></th><th>Current</th><th>Previous</th></tr>
+				</table>
+			</div>			
+		</div>
+	</div>	
+</div>
+
+<script>
+	var qryStr = getUrlVars();
+	
+	// syntax for using ajax request for jsonp
+	$.ajax({
+		type: "GET",
+		url: window.fakeDataUrl,
+		dataType: 'jsonp',
+		jsonpCallback: 'jsoncallback',
+		success: function(result){
+			if (qryStr.type=="dental"){
+				//console.log(result.data.seoDental);
+				displayKeywordsUnowned(result.data.seoDental);
+			}else{
+				displayKeywordsUnowned(result.data.seoOrtho);
+			}
+		},
+		error : function(httpReq,status,exception){
+			console.log(status+" "+exception);
+		}
+	});
+	
+</script>

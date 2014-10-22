@@ -1,0 +1,175 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js"></script>
+
+<script src="../js/shared-functions.js"></script>
+
+<link href="../css/shared.css" rel="stylesheet" type="text/css" />
+<link href="../css/unowned.css" rel="stylesheet" type="text/css" />
+
+<div class="bottom">
+	<div class="unowned-tile dental-ortho">
+		<div class="title" >Learn about Dental Sesame</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="marketing-msg">
+				Enables your practice to efficiently build and maintain a loyal patient
+				community that keeps appointments, pays bills faster, and refers friends
+				and family.
+			</div>
+			<div class="click-through">Click here to review features and benefits</div>
+			<div class="logo" >
+				<span>Dental Sesame</span>
+				<span><img src="../img/md-marketing-ortho-icon.png" alt="healthgrades icon"/></span>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="top" style="background:#fff;">
+	<div class="unowned-tile dental-ortho">
+		<div class="bottom-title" >Learn about Dental Sesame</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="banner-col">
+				<div id="appt-bars" style="width:345px;height:190px;margin-top:3px;margin-left:-7px;"></div>
+			</div>			
+		</div>
+	</div>	
+</div>
+
+<script>
+$(document).ready(function() {
+	
+	// syntax for using ajax request for jsonp
+	$.ajax({
+		type: "GET",
+		url: window.fakeDataUrl,
+		dataType: 'jsonp',
+		jsonpCallback: 'jsoncallback',
+		success: function(result){
+			drawApptBars(result.data.dentalOrtho);
+		},
+		error : function(httpReq,status,exception){
+			console.log(status+" "+exception);
+		}
+	});
+	
+	//$("#dental-ortho").click({destination: "/#schedule/daily-schedule"}, navigateTo);
+});
+
+function drawApptBars(data){
+	if (!(data.days) || !(data.totalAppt) || !(data.confirmedAppt) || !(data.noShow)){
+			dataUnavailable($('#appt-bars'), "Daily Appointments (last 7 days)")
+		
+	}else{
+		/*
+		var dayAr = capitalizeFirstLetter(parseArray(data.days));
+		var totalApptAr = parseNumAr(parseArray(data.totalAppt));
+		var confirmedApptAr = parseNumAr(parseArray(data.confirmedAppt));
+		var noShowAr = parseNumAr(parseArray(data.noShow));
+		*/
+		
+		
+		var dayNames = ['sun','mon','tue','wed','thu','fri','sat'];
+		
+		var dayAr = [];
+		var currentDay = new Date().getDay();
+		
+		//testing
+		//currentDay=6;
+		
+		var i = currentDay+1;
+		
+		while (!(dayAr[6])){
+			if (i<7){
+				dayAr.push(dayNames[i]);
+				i++;
+			}else{
+				i=0;
+				dayAr.push(dayNames[i]);
+				i++;
+			}
+		}
+		dayAr = capitalizeFirstLetter(dayAr);
+		
+		
+		var totalApptAr = parseNumAr(parseArray(data.totalAppt));
+		var confirmedApptAr = parseNumAr(parseArray(data.confirmedAppt));
+		var noShowAr = parseNumAr(parseArray(data.noShow));
+		
+		$('#appt-bars').highcharts({
+			chart: {
+				type: 'column'
+			},
+			title:{
+				text: ''
+			},
+			tooltip: {enabled: false},
+			colors: ['#999', '#ccc', '#ddd' ],
+			legend: {
+				verticalAlign: 'top',
+				symbolWidth: 12,
+				symbolHeight: 12,
+				itemStyle: { 
+					color: "#ccc", 
+					fontSize: "14px",
+					fontWeight: "bold",
+					fontFamily: "\"Trebuchet MS\", arial, helvetica, sans-serif;"  
+				}
+			},
+			xAxis: {
+				categories: dayAr,
+				labels: {
+					style: {
+						color: '#ccc',
+						fontSize: '13px'
+					}
+				}
+			},
+			yAxis: {
+				title: {text: ''},
+				tickInterval: 10,
+				gridLineColor: '#ccc',
+				labels: {
+					style: {
+						color: '#ccc',
+						fontSize: '11px'
+					}
+				},
+				offset: -7
+			},
+			
+			plotOptions: {
+				column: {
+					pointPadding: 0,
+					borderWidth: 0,
+					events: {
+						legendItemClick: function () {
+							return false; 
+						}
+					},
+					allowPointSelect: false,
+				}
+			},
+			series: [{
+				name: 'Total Appts',
+				data: totalApptAr,
+			}, {
+				name: 'Confirmed',
+				data: confirmedApptAr
+			}, {
+				name: 'No-Show',
+				data: noShowAr
+			}],
+			exporting: {
+				enabled: false
+			},
+			 credits: {
+				enabled: false
+			}
+		});
+	}
+}
+</script>

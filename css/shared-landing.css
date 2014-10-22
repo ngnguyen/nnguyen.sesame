@@ -1,0 +1,42 @@
+.content-wrapper {
+	border:1px solid #ccc; color:#6a747c;padding:15px;
+	border:1px solid #ccc; color:#6a747c;padding:15px;
+	font-family: "Trebuchet MS", arial, helvetica, sans-serif; 	
+	overflow:hidden;width:670px;font-size:10px;
+	margin-bottom:20px;
+}
+table {
+	border-collapse:collapse;border-spacing:0;width:100%;
+	margin-bottom:20px;font-size:15px;color:#6A747C;
+}
+table th {
+	background:#00A7E5;height:30px;line-height:30px;font-size:15px;
+	color:#fff;border-collapse:collapse;font-weight:bold;
+	padding-left:10px;text-align:left;
+}
+table tr td {height:28px;line-height:28px;padding-left:10px;}
+.report .header {margin-bottom:18px;}
+.report .header .url a, .report .header span:first-child + span {
+	font-size:16px;font-weight:bold;color:#393b3d;
+}
+.report .header .url a {text-decoration:none;}
+.report .header span:first-child + span {float:right;width:51%;}
+
+.report .title {font-size:22px;color:#06577a;font-weight:bold;}
+.report .date {font-size:14px;color:#6a747c;margin-bottom:20px;font-weight:bold;}
+
+.report .header .download-pdf {text-align:right;width:100%;clear:both;}
+.report .header .download-pdf {margin-top:22px;}
+.report .header .download-pdf a {color:#6a747c;font-size:12px;}
+.report .header .download-pdf img {
+	width:15px;padding-left:8px;vertical-align:middle;
+}
+
+.report .header button {
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAfCAIAAACH7hGnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3ggcEzQrx6ljhwAAAExJREFUOMtjlFz0iIECwOKvI0CR/r///lOmnyLtlNv/b4Dtp9T//4Z4+A+8/ynU/49C9w+w/aP+p7D8GOLhP/TLzwENP8ZJlz9Soh8ARUdLbnIKKT8AAAAASUVORK5CYII=);
+	border-radius:7px;height:25px;width:40px;color:#fff;
+	font-weight:bold;border:none;margin-left:3px;
+}
+
+table.num-col-3 tr th:first-child { width:320px; }
+table.num-col-3 tr th:first-child + th { width:160px; }
