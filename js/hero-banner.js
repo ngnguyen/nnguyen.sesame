@@ -52,7 +52,7 @@ function drawConfirmationByType(data){
 			},
 			yAxis: {
 				title: {text: ''},
-				tickInterval: 10,
+				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
 					style: {
@@ -182,7 +182,7 @@ function drawTodayMsg(data){
 			},
 			yAxis: {
 				title: {text: ''},
-				tickInterval: 10,
+				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
 					style: {
@@ -259,7 +259,7 @@ function drawApptBars(data){
 			},
 			yAxis: {
 				title: {text: ''},
-				tickInterval: 10,
+				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
 					style: {
@@ -368,7 +368,7 @@ function drawPatientRemider(data){
 				// max:30,
 				categories: xAxisValues,
 				//startOnTick:1,
-				tickInterval:5,
+				//tickInterval:5,
 				labels: {
 					style: {
 						color: '#06567A',

@@ -24,7 +24,7 @@ function drawFbReachEngagement(data){
 				}
 			},
 			yAxis: {
-				
+				min:0,
 				title: '',
 				gridLineColor: '#06567A',
 				labels: {
@@ -95,6 +95,7 @@ function drawFbLikes(data) {
 				}
 			},
 			yAxis: {
+				min:0,
 				title: '',
 				//tickInterval:10,
 				gridLineColor: '#06567A',

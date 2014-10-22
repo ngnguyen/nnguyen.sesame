@@ -43,7 +43,7 @@ function drawTodayMsg(data){
 			},
 			yAxis: {
 				title: {text: ''},
-				tickInterval: 10,
+				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
 					style: {
@@ -120,7 +120,7 @@ function drawApptBars(data){
 			},
 			yAxis: {
 				title: {text: ''},
-				tickInterval: 10,
+				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
 					style: {
