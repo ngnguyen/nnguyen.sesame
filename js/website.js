@@ -14,10 +14,17 @@ function drawTopReferringSites(data){
 		$.each(currentAr, function(i, v){
 			var diff = (currentAr[i]-lastWeekAr[i]);
 			diff = (diff>0) ? ("+"+diff) : diff; 	
-						
+			
+			// check whether site name is more than 40 characterSet
+			// replace the whole name with "siteName ..."
+			var siteName = siteAr[i];
+			if (siteAr[i].length>40){
+				siteName = siteName.substr(0,30) + '...';
+			} 
+			
 			$("#referring-sites").append(
 				"<tr>"
-					+"<td class='site'>"+siteAr[i]+"</td>"
+					+"<td class='site tooltip' title='"+siteAr[i]+"'>"+siteName+"</td>"
 					+"<td class='current tooltip' title='"+diff+"'>"+currentAr[i]+"</td>"
 					+"<td class='last-week'>"+lastWeekAr[i]+"</td>"
 				+"</tr>");	
