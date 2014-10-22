@@ -32,6 +32,9 @@ function drawFbReachEngagement(data){
 						color: '#06567A',
 						fontSize: '11px'
 					}
+				},
+				labels: {
+					format: '{value:.0f}'
 				}
 			},
 			series: [{
