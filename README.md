@@ -1,4 +1,6 @@
 nnguyen.sesame
 ==============
 
-test-sesame-content.zip: html template for ADA Dashboard
+templates for ADA Dashboard
+
+folders with pubic access: img, js, css, data.json
