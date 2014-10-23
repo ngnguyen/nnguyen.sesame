@@ -7,8 +7,35 @@ function drawFbReachEngagement(data){
 		var engagementAr = parseNumAr(parseArray(data.engagement));
 		
 		$('#fb-reach-engagement-line').highcharts({
+			chart: {
+				style: { 
+					fontFamily: "\"Trebuchet MS\", arial, helvetica, sans-serif;"
+					
+				}
+			},
 			title: {
-				text: ''
+				text: 'Facebook',
+				style: {
+					fontSize: '14px',
+					fontWeight: 'bold',
+					color: '#06577a'
+				},
+				y:15,
+				x:-132,
+				margin:23,
+			},
+			legend: { 
+				verticalAlign:'top', 
+				x:55, 
+				y:-5,
+				itemStyle: { 
+					color: "#06567A", 
+					fontSize: "14px",
+					fontWeight: "bold",
+					fontFamily: "\"Trebuchet MS\", arial, helvetica, sans-serif;"
+				},
+				itemDistance:30,
+				symbolWidth:18
 			},
 			colors: [ "#00A7E5","#E6ED64" ],
 			subtitle: {
@@ -31,11 +58,9 @@ function drawFbReachEngagement(data){
 					style: {
 						color: '#06567A',
 						fontSize: '11px'
-					}
-				},
-				labels: {
+					},
 					format: '{value:.0f}'
-				}
+				},
 			},
 			series: [{
 			    name: 'Reach',
@@ -43,7 +68,7 @@ function drawFbReachEngagement(data){
 				marker: { fillColor: '#06567A' },
 				tooltip: {		
 					headerFormat: '<table>',
-					pointFormat: '<tr><td style="font-size:10px;"><b>{point.y}</b> Views</td></tr>',
+					pointFormat: '<tr><td style="font-size:12px;"><b>{point.y}</b> Views</td></tr>',
 					footerFormat: '</table>',
 					shared: true,
 					useHTML: true
@@ -54,7 +79,7 @@ function drawFbReachEngagement(data){
 				marker: { fillColor: '#06567A' },
 				tooltip: {		
 					headerFormat: '<table>',
-					pointFormat: '<tr><td style="font-size:10px;"><b>{point.y}</b> Clicks</td></tr>',
+					pointFormat: '<tr><td style="font-size:12px;"><b>{point.y}</b> Clicks</td></tr>',
 					footerFormat: '</table>',
 					shared: true,
 					useHTML: true
