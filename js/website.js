@@ -1,10 +1,10 @@
 function drawTopReferringSites(data){
-	if (!(data.current) || !(data.lastWeek) || !(data.months)){
+	if (!(data.current) || !(data.last) || !(data.months)){
 		dataUnavailable($('.website .banner-col:nth-child(2)'), "Top 5 Referring Sites");
 	
 	}else{
 		var currentAr = parseNumAr(parseArray(data.current));
-		var lastWeekAr = parseNumAr(parseArray(data.lastWeek));
+		var lastAr = parseNumAr(parseArray(data.last));
 		var siteAr = parseArray(data.sites);
 		var monthAr = capitalizeFirstLetter(parseArray(data.months));
 		
@@ -12,7 +12,7 @@ function drawTopReferringSites(data){
 		$('#referring-sites .m_prev').text(monthAr[1]);
 		
 		$.each(currentAr, function(i, v){
-			var diff = (currentAr[i]-lastWeekAr[i]);
+			var diff = (currentAr[i]-lastAr[i]);
 			diff = (diff>0) ? ("+"+diff) : diff; 	
 			
 			// check whether site name is more than 40 characterSet
@@ -26,7 +26,7 @@ function drawTopReferringSites(data){
 				"<tr>"
 					+"<td class='site tooltip' title='"+siteAr[i]+"'>"+siteName+"</td>"
 					+"<td class='current tooltip' title='"+diff+"'>"+currentAr[i]+"</td>"
-					+"<td class='last-week'>"+lastWeekAr[i]+"</td>"
+					+"<td class='last-week'>"+lastAr[i]+"</td>"
 				+"</tr>");	
 		});
 		
