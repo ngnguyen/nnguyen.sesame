@@ -1,0 +1,57 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script src="../js/shared-functions.js"></script>
+<script src="../js/social.js"></script>
+
+<link href="../css/shared.css" type="text/css" rel="stylesheet" /> 
+<link href="../css/social.css" type="text/css" rel="stylesheet" /> 
+
+	<div class="banner social" >
+		<div class="title" id="social">Social</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="banner-col">
+				<div class="header">Facebook Likes</div>
+				<div id="fb-like-chart" style="width: 345px;height: 141px; margin: 0;"></div>	
+			</div>
+			
+			<div class="banner-col">
+				<div class="header fb-reach-engagement-legends">
+					<span class="fb-reach-engagement-legend">Facebook</span>
+					<span class="fb-reach-engagement-legend">
+						<span style="background:#00A7E5;"></span>Reach
+					</span>
+					<span class="fb-reach-engagement-legend">
+						<span style="background:#E6ED64"></span>Engagement
+					</span>
+				</div>
+				
+				<div id="fb-reach-engagement-line" style="width: 345px;height: 182px; margin: 0;"></div>	
+			</div>
+		</div>
+	</div>
+	
+<script>
+$(document).ready(function() {
+	
+	
+	// syntax for using ajax request for jsonp
+	$.ajax({
+		type: "GET",
+		url:  window.fakeDataUrl,
+		dataType: 'jsonp',
+		jsonpCallback: 'jsoncallback',
+		success: function(result){
+			drawFbLikes(result.data.social);
+			drawFbReachEngagement(result.data.social);
+		},
+		error : function(httpReq,status,exception){
+			console.log(status+" "+exception);
+		}
+	});
+	
+	//$("#social").click({destination: "/#websites/websites-statistics"}, navigateTo);
+});
+</script>
