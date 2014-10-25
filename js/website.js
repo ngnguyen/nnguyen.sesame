@@ -1,6 +1,6 @@
 function drawTopReferringSites(data){
 	if (!(data.current) || !(data.last) || !(data.months)){
-		dataUnavailable($('.website .banner-col:nth-child(2)'), "Top 5 Referring Sites");
+		dataUnavailable($('.website .banner-col:nth-child(2)'), "Top Referring Sites");
 	
 	}else{
 		var currentAr = parseNumAr(parseArray(data.current));

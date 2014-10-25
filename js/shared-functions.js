@@ -68,8 +68,12 @@ function navigateTo(e){
 // Accept a string that is formatted as an array. Convert the
 // given string to a real array
 function parseArray(rawData){
-	//take everything except first and last character
-	return rawData.substring(1, rawData.length-1).split(",") 
+	if (rawData.trim()=="[]"){
+		return [];
+	}else{
+		//take everything except first and last character
+		return rawData.substring(1, rawData.length-1).split(",");
+	}
 }
 
 // convert all "string" values of an array to number
@@ -95,3 +99,12 @@ function dataUnavailable(chartFrame, chartTitle){
 		+'</div>');
 }
 
+function newMemberMsg(chartFrame, chartTitle, product){
+	chartTitle = typeof chartTitle !== 'undefined' ? chartTitle : ''; 
+	chartFrame.html('<div class="data-unavailable-header" style="color:#ccc;">'
+			+chartTitle
+		+'</div>'
+		+'<div class="error-msg">'
+			+'<div>Thank you for purchasing '+product+'! Initial statistics will be displayed within 1 month of service.</div>'
+		+'</div>');
+}

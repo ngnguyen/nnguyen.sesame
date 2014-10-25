@@ -1,7 +1,7 @@
 // inject values into "top 5 keyword ranking" table
 function displayKeywords(data){
 	if (!(data.kw) || !(data.current) || !(data.last) || !(data.months)){
-		dataUnavailable($(".seo .banner-col:nth-child(1)"), "Top 5 Keyword Rankings");
+		dataUnavailable($(".seo .banner-col:nth-child(1)"), "Top Keyword Rankings");
 	} else {
 		var kwAr = capitalizeFirstLetter(parseArray(data.kw));
 		var currentAr = parseNumAr(parseArray(data.current));
