@@ -14,17 +14,24 @@ function drawTopReferringSites(data){
 		$.each(currentAr, function(i, v){
 			var diff = (currentAr[i]-lastAr[i]);
 			diff = (diff>0) ? ("+"+diff) : diff; 	
+			var siteNameTooltip = false;
 			
-			// check whether site name is more than 40 characterSet
+			// check whether site name is more than 25 characterSet
 			// replace the whole name with "siteName ..."
 			var siteName = siteAr[i];
-			if (siteAr[i].length>40){
-				siteName = siteName.substr(0,30) + '...';
+			if (siteAr[i].length>25){
+				siteName = siteName.substr(0,20) + '...';
+				siteNameTooltip = true;
 			} 
+			
+			var longUrl = "<td class='site' >"+siteName+"</td>";;
+			if (siteNameTooltip){
+				longUrl = "<td class='site tooltip' title='"+siteAr[i]+"'>"+siteName+"</td>";
+			}
 			
 			$("#referring-sites").append(
 				"<tr>"
-					+"<td class='site tooltip' title='"+siteAr[i]+"'>"+siteName+"</td>"
+					+longUrl
 					+"<td class='current tooltip' title='"+diff+"'>"+currentAr[i]+"</td>"
 					+"<td class='last-week'>"+lastAr[i]+"</td>"
 				+"</tr>");	
