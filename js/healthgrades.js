@@ -1,18 +1,28 @@
-
-
-
 function displayAvgRating(data){
 	if (!(data.numRes) || !(data.avgRating)){ 
 		dataUnavailable($(".healthgrades .banner-col:nth-child(1)"), "Average Rating For Practise");
 	
 	}else{
-		var numResponse = parseNumAr(parseArray(data.numRes))[0];
-		var avgRating = parseNumAr(parseArray(data.avgRating))[0];
+		var numResponse = parseArray(data.numRes);
+		var avgRating = parseArray(data.avgRating);
+		//console.log(numResponse.length);
 		
-		$("#no-of-response span").text(numResponse);
-		var temp = (avgRating*100/5);
-		$("#avg-rating .lg-rating .back").css("width", temp+"%");
-		$("#avg-rating").attr("title", (avgRating));
+		if (numResponse.length < 1 || avgRating.length < 1){
+			
+			newMemberMsg($(".healthgrades .banner-col:nth-child(1)"), "Average Rating For Practice", "Healthgrades");
+		}else{
+			
+			numResponse = parseNumAr(numResponse[0]);
+			avgRating = parseNumAr(avgRating[0])[0].toFixed(1);
+			
+			console.log(avgRating);
+			
+			$("#no-of-response span").text(numResponse);
+			var temp = (avgRating*100/5);
+			$("#avg-rating .lg-rating .back").css("width", temp+"%");
+			$("#avg-rating").attr("title", (avgRating));
+			
+		}
 	}
 }
 
@@ -27,7 +37,7 @@ function displayRatings(data){
 		var ratingAr = parseNumAr(parseArray(data.ratings));
 		
 		// console.log(fNameAr.length);
-		// console.log(fNameAr);
+		console.log('fnamear '+fNameAr);
 		
 		if (fNameAr.length < 1 || lNameAr.length < 1 || dateAr.length < 1){
 			

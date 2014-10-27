@@ -37,3 +37,4 @@
 	.error-msg {text-align:center;color:#ccc;margin-top:40px;}
 	.error-msg div:first-child {font-size:14px;margin-bottom:10px;}
 	.error-msg div:first-child + div{font-size:12px;}
+	.data-unavailable-msg {margin-left:10px;margin-right:10px;}

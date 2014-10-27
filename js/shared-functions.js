@@ -68,7 +68,7 @@ function navigateTo(e){
 // Accept a string that is formatted as an array. Convert the
 // given string to a real array
 function parseArray(rawData){
-	if (rawData.trim()=="[]"){
+	if (rawData.trim()=="[]"){ //when array is empty
 		return [];
 	}else{
 		//take everything except first and last character
@@ -79,6 +79,9 @@ function parseArray(rawData){
 // convert all "string" values of an array to number
 function parseNumAr(data){
 	var result = [];
+	
+	if(typeof data == 'string'){ data = [data]; }
+	
 	for (var i=0; i < data.length; i++){
 		//console.log(data[i]);
 		result.push(parseFloat(data[i]));
@@ -104,7 +107,7 @@ function newMemberMsg(chartFrame, chartTitle, product){
 	chartFrame.html('<div class="data-unavailable-header" style="color:#ccc;">'
 			+chartTitle
 		+'</div>'
-		+'<div class="error-msg">'
+		+'<div class="error-msg data-unavailable-msg">'
 			+'<div>Thank you for purchasing '+product+'! Initial statistics will be displayed within 1 month of service.</div>'
 		+'</div>');
 }
