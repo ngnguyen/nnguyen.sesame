@@ -111,3 +111,13 @@ function newMemberMsg(chartFrame, chartTitle, product){
 			+'<div>Thank you for purchasing '+product+'! Initial statistics will be displayed within 1 month of service.</div>'
 		+'</div>');
 }
+
+function noValueMsg(chartFrame, chartTitle){
+	chartTitle = typeof chartTitle !== 'undefined' ? chartTitle : ''; 
+	chartFrame.html('<div class="data-unavailable-header" style="color:#ccc;">'
+			+chartTitle
+		+'</div>'
+		+'<div class="error-msg no-value-msg">'
+			+'<div>There are currently no values to display</div>'
+		+'</div>');
+}

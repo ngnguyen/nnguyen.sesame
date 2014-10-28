@@ -9,7 +9,7 @@ function displayAvgRating(data){
 		
 		if (numResponse.length < 1 || avgRating.length < 1){
 			
-			newMemberMsg($(".healthgrades .banner-col:nth-child(1)"), "Average Rating For Practice", "Healthgrades");
+			noValueMsg($(".healthgrades .banner-col:nth-child(1)"));
 		}else{
 			
 			numResponse = parseNumAr(numResponse[0]);
@@ -41,7 +41,7 @@ function displayRatings(data){
 		
 		if (fNameAr.length < 1 || lNameAr.length < 1 || dateAr.length < 1){
 			
-			newMemberMsg($(".healthgrades .banner-col:nth-child(2)"), "Recent Patient Reviews", "Healthgrades");
+			noValueMsg($(".healthgrades .banner-col:nth-child(2)"));
 		}else{	
 			
 			// wipe out hard-coded values

@@ -8,35 +8,40 @@ function drawTopReferringSites(data){
 		var siteAr = parseArray(data.sites);
 		var monthAr = capitalizeFirstLetter(parseArray(data.months));
 		
-		$('#referring-sites .m_cur').text(monthAr[0]);
-		$('#referring-sites .m_prev').text(monthAr[1]);
+		if(currentAr.length<1 || lastAr.length<1 || siteAr.length<1 || monthAr.length<1){
+			
+			noValueMsg($('.website .banner-col:nth-child(2)'));
+		}else{
 		
-		$.each(currentAr, function(i, v){
-			var diff = (currentAr[i]-lastAr[i]);
-			diff = (diff>0) ? ("+"+diff) : diff; 	
-			var siteNameTooltip = false;
+			$('#referring-sites .m_cur').text(monthAr[0]);
+			$('#referring-sites .m_prev').text(monthAr[1]);
 			
-			// check whether site name is more than 25 characterSet
-			// replace the whole name with "siteName ..."
-			var siteName = siteAr[i];
-			if (siteAr[i].length>25){
-				siteName = siteName.substr(0,20) + '...';
-				siteNameTooltip = true;
-			} 
-			
-			var longUrl = "<td class='site' >"+siteName+"</td>";;
-			if (siteNameTooltip){
-				longUrl = "<td class='site tooltip' title='"+siteAr[i]+"'>"+siteName+"</td>";
-			}
-			
-			$("#referring-sites").append(
-				"<tr>"
-					+longUrl
-					+"<td class='current tooltip' title='"+diff+"'>"+currentAr[i]+"</td>"
-					+"<td class='last-week'>"+lastAr[i]+"</td>"
-				+"</tr>");	
-		});
-		
+			$.each(currentAr, function(i, v){
+				var diff = (currentAr[i]-lastAr[i]);
+				diff = (diff>0) ? ("+"+diff) : diff; 	
+				var siteNameTooltip = false;
+				
+				// check whether site name is more than 25 characterSet
+				// replace the whole name with "siteName ..."
+				var siteName = siteAr[i];
+				if (siteAr[i].length>25){
+					siteName = siteName.substr(0,20) + '...';
+					siteNameTooltip = true;
+				} 
+				
+				var longUrl = "<td class='site' >"+siteName+"</td>";;
+				if (siteNameTooltip){
+					longUrl = "<td class='site tooltip' title='"+siteAr[i]+"'>"+siteName+"</td>";
+				}
+				
+				$("#referring-sites").append(
+					"<tr>"
+						+longUrl
+						+"<td class='current tooltip' title='"+diff+"'>"+currentAr[i]+"</td>"
+						+"<td class='last-week'>"+lastAr[i]+"</td>"
+					+"</tr>");	
+			});
+		}	
 	}
 }
 
@@ -77,63 +82,69 @@ function drawDailyVisitors(data) {
 		// });
 		
 		// dayAr = capitalizeFirstLetter(dayAr);
-		$('#daily-visitor-bars').highcharts({
-			title: {
-				text: ''
-			},
-			colors: [
-				"#E6ED64",
-				"#000"
-			],
-			subtitle: {
-				text: ''
-			},
-			xAxis: {
-				categories: dayAr,
-				labels: {
-					style: {
-						color: '#06567A',
-						fontSize: '13px'
-					}
-				}
-			},
-			yAxis: {
-				title: '',
-				//tickInterval:10,
-				min:0,
-				gridLineColor: '#06567A',
-				labels: {
-					style: {
-						color: '#06567A',
-						fontSize: '11px'
-					}
-				}
-			},
-			tooltip: {		
-				headerFormat: '<table>',
-				pointFormat: '<tr><td style="font-size:12px;"><b>{point.y}</b> Visits</td></tr>',
-				footerFormat: '</table>',
-				shared: true,
-				useHTML: true
-			},
-			legend: {
-				enabled: false
-			},
-			series: [{
-			   // name: 'London',
-				data: numVisAr,
-				marker: { 
-					fillColor: '#06567A'
-				}
-			}],
-			exporting: {
-				enabled: false
-			},
-			 credits: {
-				enabled: false
-			}
-		});
 		
-	
+		if(dayAr.length<1 || numVisAr.length<1){
+			
+			noValueMsg($('.website .banner-col:nth-child(1)'));
+		}else{
+			$('#daily-visitor-bars').highcharts({
+				title: {
+					text: ''
+				},
+				colors: [
+					"#E6ED64",
+					"#000"
+				],
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: dayAr,
+					labels: {
+						style: {
+							color: '#06567A',
+							fontSize: '13px'
+						}
+					}
+				},
+				yAxis: {
+					title: '',
+					//tickInterval:10,
+					min:0,
+					//minRange:0.1,
+					gridLineColor: '#06567A',
+					labels: {
+						style: {
+							color: '#06567A',
+							fontSize: '11px'
+						}
+					}
+				},
+				tooltip: {		
+					headerFormat: '<table>',
+					pointFormat: '<tr><td style="font-size:12px;"><b>{point.y}</b> Visits</td></tr>',
+					footerFormat: '</table>',
+					shared: true,
+					useHTML: true
+				},
+				legend: {
+					enabled: false
+				},
+				series: [{
+				   // name: 'London',
+					data: numVisAr,
+					marker: { 
+						fillColor: '#06567A'
+					}
+				}],
+				exporting: {
+					enabled: false
+				},
+				 credits: {
+					enabled: false
+				}
+			});
+		
+		}
 	}
 }
