@@ -370,6 +370,7 @@ function drawPatientRemider(data){
 				title: '',
 				gridLineColor: '#06567A',
 				labels: {
+					x:-3,
 					style: {
 						color: '#06567A',
 						fontSize: '11px'
