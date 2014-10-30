@@ -1,6 +1,6 @@
-//var fakeDataUrl = "../data.json?callback=?";
-var fakeDataUrl = "https://test-sesame-content.s3.amazonaws.com/global_images/product_tiles/data.json?callback=?";
-//var fakeDataUrl = "https://s3-us-west-2.amazonaws.com/demo-sesame-content-engineering-environment/global_images/product_tiles/data.json";
+var fakeDataUrl = "../data.json?callback=?";
+//var fakeDataUrl = "https://test-sesame-content.s3.amazonaws.com/global_images/product_tiles/data.json?callback=?";
+//var fakeDataUrl = "https://s3.amazonaws.com/sesame-test-content/global_images/product_tiles/data.json";
 
 // capitalize first letter
 function capitalizeFirstLetter(data){

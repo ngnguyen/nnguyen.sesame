@@ -348,18 +348,7 @@ function drawPatientRemider(data){
 				text: ''
 			},
 			colors: [ "#06577a", "#00A7E5", "#E6ED64" ],
-			legend: {
-				enabled: false
-				/*verticalAlign: 'top',
-				symbolWidth: 12,
-				symbolHeight: 12,
-				itemStyle: { 
-					color: "#06567A", 
-					fontSize: "12px",
-					fontWeight: "bold",
-					fontFamily: "\"Trebuchet MS\", arial, helvetica, sans-serif;"  
-				}*/
-			}, 
+			legend: { enabled: false }, 
 			subtitle: {
 				text: ''
 			},
@@ -368,7 +357,7 @@ function drawPatientRemider(data){
 				// max:30,
 				categories: xAxisValues,
 				//startOnTick:1,
-				//tickInterval:5,
+				tickInterval:5,
 				labels: {
 					style: {
 						color: '#06567A',
