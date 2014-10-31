@@ -55,6 +55,7 @@ function drawConfirmationByType(data){
 				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
+					x:-5,
 					style: {
 						color: '#06567A',
 						fontSize: '11px'
@@ -185,6 +186,7 @@ function drawTodayMsg(data){
 				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
+					x:-5,
 					style: {
 						color: '#06567A',
 						fontSize: '11px'
@@ -252,6 +254,7 @@ function drawApptBars(data){
 				categories: dayAr,
 				labels: {
 					style: {
+						x:-5,
 						color: '#06567A',
 						fontSize: '12px'
 					}
@@ -262,6 +265,7 @@ function drawApptBars(data){
 				//tickInterval: 10,
 				gridLineColor: '#06567A',
 				labels: {
+					x:-5,
 					style: {
 						color: '#06567A',
 						fontSize: '11px'
@@ -348,15 +352,23 @@ function drawPatientRemider(data){
 				text: ''
 			},
 			colors: [ "#06577a", "#00A7E5", "#E6ED64" ],
-			legend: { enabled: false }, 
+			legend: { 
+				verticalAlign: 'top',
+				x:-10,
+				symbolWidth: 12,
+				symbolHeight: 12,
+				itemStyle: { 
+					color: "#06567A", 
+					fontSize: "12px",
+					fontWeight: "bold",
+					fontFamily: "\"Trebuchet MS\", arial, helvetica, sans-serif;"  
+				}
+			}, 
 			subtitle: {
 				text: ''
 			},
 			xAxis: {
-				// min:0,
-				// max:30,
 				categories: xAxisValues,
-				//startOnTick:1,
 				tickInterval:5,
 				labels: {
 					style: {
@@ -370,7 +382,7 @@ function drawPatientRemider(data){
 				title: '',
 				gridLineColor: '#06567A',
 				labels: {
-					x:-3,
+					x:-5,
 					style: {
 						color: '#06567A',
 						fontSize: '11px'
