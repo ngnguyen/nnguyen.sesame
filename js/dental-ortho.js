@@ -64,7 +64,8 @@ function apptReminderSentBars(msgAr){
 				style: {
 					color: '#06567A',
 					fontSize: '11px'
-				}
+				},
+				format: '{value:.0f}'
 			}                 
 		},
 		tooltip: {
@@ -95,7 +96,7 @@ function apptReminderSentBars(msgAr){
 
 function drawApptBars(data){
 	if (!(data.days) || !(data.totalAppt) || !(data.confirmedAppt) || !(data.noShow)){
-		dataUnavailable($('.dental-ortho .banner-col:nth-child(1)'))
+		dataUnavailable($('.dental-ortho .banner-col:nth-child(1)'),"Daily Appointments (last 7 days)")
 	
 	}else{
 		var dayAr = capitalizeFirstLetter(parseArray(data.days));

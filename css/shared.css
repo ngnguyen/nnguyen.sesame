@@ -12,9 +12,9 @@
 		border-bottom:1px solid #00A7E5;}
 	}
 	.banner { width:700px;height:220px;overflow:hidden; }
-	.banner-col {margin:0;float:left;height:189px;}
-	.banner-col-sm {width:335px;}
-	.banner-col-lg {width:355px;}
+	.banner-col {width:349px;margin:0;float:left;height:189px;}
+	.hero-banner .banner-col-sm {width:335px;}
+	.hero-banner .banner-col-lg {width:355px;}
 	.title, .title a {
 		display:block;
 		font-size:18px;
