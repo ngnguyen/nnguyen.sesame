@@ -167,7 +167,8 @@ function apptBars(dayAr,totalApptAr,confirmedApptAr,noShowAr){
 				style: {
 					color: '#06567A',
 					fontSize: '11px'
-				}
+				},
+				format: '{value:.0f}'
 			}
 		},
 		
