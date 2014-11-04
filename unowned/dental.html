@@ -4,6 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js"></script>
 
 <script src="../js/shared-functions.js"></script>
+<script src="../js/unowned.js"></script>
 
 <link href="../css/shared.css" rel="stylesheet" type="text/css" />
 <link href="../css/unowned.css" rel="stylesheet" type="text/css" />
@@ -19,9 +20,7 @@
 				and family.
 			</div>
 			<!-- <div class="click-through">Click here to review features and benefits</div> -->
-			<div class='more-info'>For more information please contact your Solutions Consultant at 
-				<span class='phone-no'>877-633-5193 ext. 3914</span>
-			</div>
+			<div class='more-info'></div>
 			<div class="logo" >
 				<span>Dental Sesame</span>
 				<span><img src="../img/md-marketing-ortho-icon.png" alt="healthgrades icon"/></span>
@@ -44,7 +43,7 @@
 
 <script>
 $(document).ready(function() {
-	
+	moreInfoMsg();
 	// syntax for using ajax request for jsonp
 	$.ajax({
 		type: "GET",
