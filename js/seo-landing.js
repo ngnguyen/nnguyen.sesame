@@ -5,11 +5,9 @@
 "use strict";
 
 $(document).ready(function(){
-	$(".tabs > span").click(function(){ displayTab(this); });
-	
 	assignBgColor($(".kw-table .this-month"));
 	assignBgColor($(".kw-table .last-month"));
-	makeMonthYrPicker();
+	//makeMonthYrPicker();
 	
 	var temp = { // tooltip for most charts		
 		headerFormat: '<table>',
@@ -25,6 +23,7 @@ $(document).ready(function(){
 		MAKE CONTENT OF SESAME FIRST CALL TAB 
 	
 	******************************************************/
+	
 	
 	// "from organic traffic" table
 	var organicTraffic = {
