@@ -48,10 +48,6 @@
 .bar-chart {width:670px;}
 #organic-src-calls {margin-top:0;margin-bottom:40px;}
 table tr:nth-child(even) {background-color:#f2f2f2;}
-#website-traffic-content, #sesame-seo-content, 
-	#review-monitor-content, #pay-per-click-content {
-		display:none;
-}
 
 #search-engine-visits {height:268px;margin-bottom:40px;}
 #ctr-over-time {height:300px;}

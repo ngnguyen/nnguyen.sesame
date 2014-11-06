@@ -4,33 +4,34 @@
 <script src="../js/shared-landing.js"></script>
 
 <link href="../css/shared-landing.css" rel="stylesheet" type="text/css" />
+<link href="../css/social-landing.css" rel="stylesheet" type="text/css" />
 
 
 <div class="content-wrapper report">
 	<div class="header">
-		<span class="url">
-			<a href="www.overlakefamilydentistry.com" >
+		<div>
+			<span class="title">Sesame Social Statistics</span>			
+			<span class="download-pdf">
+				<span><a href="#">Download PDF</a></span>
+				<img alt="pdf icon" src="../img/pdf_icon.jpg" />
+			</span>
+			<!--
+			<span>
+				Monthly Report: 
+				<select class="month-picker"></select>
+				<select class="yr-picker"></select>
+				<button class="btn">Go</button>
+			</span>
+			-->
+		</div>
+		<div class='url'>
+			<a href="http://overlakefamilydentistry.com/" >
 				www.overlakefamilydentistry.com
 			</a>
-		</span>
-		
-		<!--
-		<span>
-			Monthly Report: 
-			<select class="month-picker"></select>
-			<select class="yr-picker"></select>
-			<button class="btn">Go</button>
-		</span>
-		<div class="download-pdf">
-			<span><a href="#">Download PDF</a></span>
-			<img alt="pdf icon" src="../img/pdf_icon.jpg" />
 		</div>
-		-->
+		<div class="date">September 2014</div>
 	</div>
-	
-	<div class="title">Sesame Social Report</div>
-	<div class="date">Monthly Report: September 2014</div>
-	
+
 	<div id="social-content-wrapper"></div>
 </div>
 
@@ -55,11 +56,11 @@ $(document).ready(function(){
 	
 	var fbEngagement = {
 		"title": "",
-		"heading": ["Facebook Engagement"],
+		"heading": ["Facebook Engagement",'Sep','Aug'],
 		"content": [
 			["Average Daily Reach",83,120],
-			["Engaged Users",83,120],
-			["People Talking About This (PTAT)",83,120]
+			["Engaged Users",180,601],
+			["People Talking About This (PTAT)",93,163]
 		]
 	};
 	
@@ -69,31 +70,31 @@ $(document).ready(function(){
 	fbLikeOverTime.series = [
 		{
 			data : [50,60,70,90,110,130,115,160,170,190,210,250],
-			color: "#36b900",
-			marker: { fillColor: '#36b900' },
+			color: "#00a9e4",
+			marker: { fillColor: '#00a9e4' },
 			tooltip: temp
 		}
 	];
 	
 	var fbActivityOverTime = lineChart();
 	fbActivityOverTime.title.text = "Facebook Activity Over Time";
-	fbActivityOverTime.legend.enabled = false;
+	//fbActivityOverTime.legend.enabled = false;
 	fbActivityOverTime.series = [
 		{
 			name: 'Daily Reach',
 			data: [50,60,70,90,110,130,115,160,170,190,210,250],
-			marker: { fillColor: '#06577a' },
+			marker: { fillColor: '#065679' },
 			tooltip: temp
 			
 		}, {
 			name: 'Engaged',
 			data: [20,30,40,50,60,80,55,120,130,150,170,220],
-			marker: { fillColor: '#36b900' },
+			marker: { fillColor: '#00a9e4' },
 			tooltip: temp
 		}, {
 			name: 'PTAT',
 			data: [10,15,20,30,40,60,35,100,110,130,150,200],
-			marker: { fillColor: '#eba43d' },
+			marker: { fillColor: '#e7ec63' },
 			tooltip: temp
 		}
 	];
@@ -110,7 +111,7 @@ $(document).ready(function(){
 	
 	var blogTraffic ={
 		"title": "",
-		"heading": ["Blog Traffic", "This Month", "Last Month"],
+		"heading": ["Blog Traffic", "Sep", "Aug"],
 		"content": [
 			["Blog Views",57,62]
 		]
@@ -123,21 +124,20 @@ $(document).ready(function(){
 	blogPageViewsOverTime.series = [
 		{
 			data : [50,60,70,90,110,130,115,160,170,190,210,250],
-			color: "#36b900",
-			marker: { fillColor: '#36b900' },
+			color: "#00a9e4",
+			marker: { fillColor: '#00a9e4' },
 			tooltip: temp
 		}
 	];
 	
 	var ytvideo ={
 		"title": "",
-		"heading": ["Youtube Activity (5 Uploads)", "This Month", "Last Month"],
+		"heading": ["Youtube Activity (5 Uploads)", "Sep", "Aug"],
 		"content": [
 			["Video Views",57,62],
 			["Subcribers",57,62]
 		]
 	};
-	
 	
 	var ytVideoViewsOverTime = lineChart();
 	ytVideoViewsOverTime.title.text = "Youtube Video Views Over Time";
@@ -145,11 +145,19 @@ $(document).ready(function(){
 	ytVideoViewsOverTime.series = [
 		{
 			data : [50,60,70,90,110,130,115,160,170,190,210,250],
-			color: "#36b900",
-			marker: { fillColor: '#36b900' },
+			color: "#00a9e4",
+			marker: { fillColor: '#00a9e4' },
 			tooltip: temp
 		}
 	];
+	
+	var twitterActivity ={
+		"title": "",
+		"heading": ["Twitter (290 Tweets)", "Sep", "Aug"],
+		"content": [
+			["Twitter Followers",5,5]
+		]
+	};
 	
 	drawTable($("#social-content-wrapper"), fbLike);
 	$("#social-content-wrapper").append(
@@ -168,6 +176,6 @@ $(document).ready(function(){
 	$("#social-content-wrapper").append(
 		'<div id="yt-video-views-over-time" class="line-chart"></div>');
 	$("#yt-video-views-over-time").highcharts(ytVideoViewsOverTime);
-	
+	drawTable($("#social-content-wrapper"), twitterActivity);
 });
 </script>

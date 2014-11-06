@@ -251,8 +251,8 @@ $(document).ready(function(){
 		"title" : '',
 		"heading": ["Overall Reviews"],
 		"content": [
-			["Total Reviews",8],
-			["Average Rating","5.00"]
+			["Total Reviews",8,''],
+			["Average Rating","5.00",'']
 		]
 	};
 	
