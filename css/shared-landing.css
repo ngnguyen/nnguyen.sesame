@@ -1,6 +1,5 @@
 .content-wrapper {
-	border:1px solid #ccc; color:#6a747c;padding:15px;
-	border:1px solid #ccc; color:#6a747c;padding:15px;
+	color:#6a747c;padding:15px;
 	font-family: "Trebuchet MS", arial, helvetica, sans-serif; 	
 	overflow:hidden;width:670px;font-size:10px;
 	margin-bottom:20px;
@@ -17,17 +16,17 @@ table th {
 table tr td {height:28px;line-height:28px;padding-left:10px;}
 .report .header {margin-bottom:18px;}
 .report .header .url a, .report .header span:first-child + span {
-	font-size:16px;font-weight:bold;color:#393b3d;
+	font-size:16px;font-weight:bold;color:#6a747c;
 }
 .report .header .url a {text-decoration:none;}
-.report .header span:first-child + span {float:right;width:51%;}
 
 .report .title {font-size:22px;color:#06577a;font-weight:bold;}
 .report .date {font-size:14px;color:#6a747c;margin-bottom:20px;font-weight:bold;}
 
-.report .header .download-pdf {text-align:right;width:100%;clear:both;}
-.report .header .download-pdf {margin-top:22px;}
-.report .header .download-pdf a {color:#6a747c;font-size:12px;}
+.report .header .download-pdf {
+	margin-top:22px;width:30%;margin-left:290px;
+}
+.report .header a {color:#6a747c;font-size:12px;text-decoration:none;}
 .report .header .download-pdf img {
 	width:15px;padding-left:8px;vertical-align:middle;
 }
@@ -40,3 +39,5 @@ table tr td {height:28px;line-height:28px;padding-left:10px;}
 
 table.num-col-3 tr th:first-child { width:320px; }
 table.num-col-3 tr th:first-child + th { width:160px; }
+
+.report .url {width:68%;margin-top:2px;margin-bottom:2px;}

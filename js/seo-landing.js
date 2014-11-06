@@ -29,7 +29,7 @@ $(document).ready(function(){
 	// "from organic traffic" table
 	var organicTraffic = {
 		"title": '',
-		"heading": ['From Organic Trafic', 'This Month', 'Last Month'],
+		"heading": ['From Organic Trafic', 'Sep', 'Aug'],
 		"content": [
 			['Total Calls',48,32],
 			['New Patient Calls',28,24],
@@ -42,20 +42,20 @@ $(document).ready(function(){
 	srcCalls.title.text = "Calls Over Time From Organic Sources";
 	srcCalls.series = [
 		{
-			name: 'Total visits',
+			name: 'Total Calls',
 			data: [163,194,212,238,278,345,350,379,381,405,437,476],
 			marker: { fillColor: '#06577a' },
 			tooltip: temp
 			
 		}, {
-			name: 'Total visits',
+			name: 'New Calls',
 			data: [90,110,120,130,153,164,173,197,212,238,278,345],
-			marker: { fillColor: '#36b900' },
+			marker: { fillColor: '#00a9e4' },
 			tooltip: temp
 		}, {
-			name: 'Total visits',
+			name: 'Patient Calls',
 			data: [10,15,20,30,40,60,35,100,110,130,150,200],
-			marker: { fillColor: '#eba43d' },
+			marker: { fillColor: '#e7ec63' },
 			tooltip: temp
 		}
 	];
@@ -63,7 +63,7 @@ $(document).ready(function(){
 	// "From Paid Traffic" table
 	var paidTraffic = {
 		"title": '',
-		"heading": ['From Paid Trafic', 'This Month', 'Last Month'],
+		"heading": ['From Paid Trafic', 'Sep', 'Aug'],
 		"content": [
 			['Total Calls',48,32],
 			['New Patient Calls',28,24],
@@ -76,39 +76,20 @@ $(document).ready(function(){
 	paidCalls.title.text = "Calls Over Time From Paid Sources";
 	paidCalls.series = [
 		{
-            type: 'column',
-            color: '#06577a',
-            id: 'totalCalls'
-        },
-		{
-			linkedTo: 'totalCalls',
-			type: 'line',
-			name: 'Total visits',
+			name: 'Total Calls',
 			data: [50,60,70,90,110,130,115,160,170,190,210,250],
 			marker: { fillColor: '#06577a' },
 			tooltip: temp
 			
-		}, {
-            type: 'column',
-            color: '#36b900',
-            id: 'newCalls'
-        },{
-			linkedTo: 'newCalls',
+		},{	
 			name: 'New Calls',
-			type: 'line',
 			data: [20,30,40,50,60,80,55,120,130,150,170,220],
-			marker: { fillColor: '#36b900' },
+			marker: { fillColor: '#00a9e4' },
 			tooltip: temp
-		}, {
-            type: 'column',
-            color: '#eba43d',
-            id: 'patientCalls'
-        },{
-			linkedTo: 'patientCalls',
+		},{	
 			name: 'Patient Calls',
-			type: 'line',
 			data: [10,15,20,30,40,60,35,100,110,130,150,200],
-			marker: { fillColor: '#eba43d' },
+			marker: { fillColor: '#e7ec63' },
 			tooltip: temp
 		}
 	];

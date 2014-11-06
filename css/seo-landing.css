@@ -2,13 +2,14 @@
 .kw-table tr:nth-child(even) td:first-child {background-color:#f2f2f2;}
 .kw-table tr td {height:27px;border-bottom:1px solid #ffffff;}
 .kw-table tr td:nth-child(2) {background-color:#b9e7a6;}
-.kw-table-legend {text-align:right;margin:20px 40px 5px auto;}
+.kw-table-legend {text-align:right;margin:20px 0 5px auto;}
 .kw-table-legend .rect { 
 	display:inline-block;width:15px;height:15px;margin-right:10px;
 }
-.kw-table-legend > span{
+.kw-table-legend > span:not(:last-child){
 	font-size:12px;color:#6A747C;margin-right:20px;
 }
+.kw-table-legend > span:last-child{margin-right:5px;}
 
 #first-call {width:150px;margin-left:-4px;}
 #website-traffic {width:125px;}
@@ -63,3 +64,4 @@ table tr:nth-child(even) {background-color:#f2f2f2;}
 .last-tbl {margin-bottom:5px;}
 .traffic-by-location-tbl, .overall-reviews-tbl {margin-bottom:30px;}
 .review-note {font-size:12px;color:6A747C;text-align:right;}
+#landing-pg-seo .title {margin-bottom:15px;}

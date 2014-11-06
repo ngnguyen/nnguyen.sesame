@@ -1,0 +1,17 @@
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+/*
+.navbar, .container {height:70px;line-height:70px;}
+.navbar .navbar-header img {vertical-align:initial;}
+.navbar .navbar-form {margin-top:-2px;}
+*/
+.content-wrapper {
+	margin-top:10%;width:50%;margin-left:auto;margin-right:auto;
+}
+.navbar img {width:100px;margin-top:-10px;}
+.navbar-header span {color:#fff;font-size:1.2em;height:50px;line-height:50px;}
+.btn-wrapper {width:30%;margin-right:20%;float:left;}
+.btn-wrapper img {width:100%;height:auto;}
+.btn-wrapper .btn-text {text-align:center;}

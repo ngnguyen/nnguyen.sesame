@@ -30,12 +30,12 @@ function lineChart(){
 		title: {
 			text: '',
 			style: {
-				color: "06577A",
+				color: "#065679",
 				fontSize: "15px",
 				fontWeight: "bold"
 			}
 		},
-		colors: [ "#06577a","#36b900", "#eba43d" ],
+		colors: [ "#06577a","#00a9e4", "#e7ec63" ],
 		subtitle: {
 			text: ''
 		},
@@ -47,7 +47,8 @@ function lineChart(){
 			itemMarginBottom:5,
 			symbolWidth:15,
 			symbolHeight:15,
-			symbolPadding:15
+			symbolPadding:15,
+			itemStyle:{ color: '#065679' }
 		},
 		xAxis: {
 			categories: ['Oct','Nov','Dec','Jan','Feb','Mar','Apr',
