@@ -25,5 +25,5 @@ function displayKeywordsUnowned(data){
 function moreInfoMsg(){
 	$(".more-info").append('For more information please contact '
 		+ 'your Solutions Consultant at '
-		+ '<span class="phone-no">866-437-53844</span>');
+		+ '<span class="phone-no">866-437-5384</span>');
 }

@@ -1,0 +1,15 @@
+#web-stat {height:280px;}
+#visits-by-search-engine {
+	width:349px;float:left;border-right:1px solid #ccc;
+	height:260px;padding-right:10px
+}
+#total-visits-vs-new-visits {width:300px;height:277px;float:left;padding-left:10px;}
+
+.stat-wrapper { 
+	width:145px;float:left;border-right:1px solid #ccc;
+	margin-bottom:20px;padding-left:20px;
+}
+.stat-wrapper span {color:#06577a;display:block;}
+.stat-wrapper span:first-child {font-size:12px;}
+.stat-wrapper span:nth-child(2) {font-size:20px;font-weight:bold;}
+.no-border {border:none;}

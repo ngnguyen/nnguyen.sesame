@@ -345,7 +345,7 @@ function drawPatientRemider(data){
 			}
 		});
 		
-		console.log(xAxisValues);
+		//console.log(xAxisValues);
 		
 		$('#patient-reminder').highcharts({
 			title: {
