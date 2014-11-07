@@ -13,3 +13,6 @@
 .stat-wrapper span:first-child {font-size:12px;}
 .stat-wrapper span:nth-child(2) {font-size:20px;font-weight:bold;}
 .no-border {border:none;}
+#top-referring-site, #visits-by-location {width:325px;float:left;}
+#top-referring-site {margin-right:20px;}
+#visits-by-location {margin-right:0;}

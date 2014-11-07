@@ -45,6 +45,35 @@ $(document).ready(function(){
 		}
 	];
 	$('#total-visits-vs-new-visits').highcharts(totalVisitsVsNewVisits);
+	
+	// draw Top Referring Sites (Non-Organic) table
+	var topReferringSite = {
+		"title": "",
+		"heading": ["Top Referring Sites (Non-Organic)"],
+		"content": [
+			["facebook.com",8],
+			["invisalign.com",7],
+			["youtube.com",6],
+			["healthgrades.com",5],
+			["googleads.g.doubleclick.net.com",3]
+		]
+	};
+	drawTable($('#top-referring-site'), topReferringSite);
+	
+	// draw Visits by Location table
+	var visitsByLocation ={
+		"title": "",
+		"heading": ["Visits by Location"],
+		"content": [
+			["Seattle, WA",8],
+			["Bellevue, WA",7],
+			["Kirkland, WA",6],
+			["Winchester-On-The-Severn, MD",5],
+			["Tacoma, WA",3]
+		]
+	};
+	drawTable($('#visits-by-location'), visitsByLocation);
+	
 });
 
 function drawWebStat(){

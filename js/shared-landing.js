@@ -228,6 +228,7 @@ function barChart(){
 // accept name of an html element, content of a table, class name of the given table.
 // Generate html of a table with the give class name. Append this table to the given
 // html element
+// NOTE: "tag" needs to be a jquery element
 function drawTable(tag, tbContent, className){
 	var temp = (typeof className != 'undefined') ? className : ''; 
 
@@ -294,14 +295,17 @@ function irregularIntervalChart(){
 		},
         xAxis: {
             type: 'datetime',
-			//pointInterval: 13*24 * 3600 * 1000,  // one day
+			pointInterval: 24 * 3600 * 1000,
+            pointStart: Date.UTC(2014, 7, 26),
             dateTimeLabelFormats: { // don't display the dummy year
-                month: '%b %e'
+                
+				month: '%b %e'
                 //year: '%b'
             }
         },
         yAxis: {
-            min: 0
+            min: 0,
+			title: {text:null}
         },
 		legend: {
 			//align: 'center',
@@ -314,11 +318,6 @@ function irregularIntervalChart(){
 			symbolPadding:15,
 			itemStyle:{ color: '#065679' }
 		},
-		 plotOptions: {
-            series: {
-                //pointInterval: 13* 24 * 3600 * 1000  // one day
-            }
-        },
 		credits: { enabled: false },
 		exporting: { enabled: false },
         series: [{
