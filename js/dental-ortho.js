@@ -2,7 +2,7 @@
 
 function drawTodayMsg(data){
 	if (!(data.email) || !(data.text) || !(data.phone)){
-		console.log(data);
+		//console.log(data);
 		
 		dataUnavailable($('.dental-ortho .banner-col:nth-child(2)'), "Appt. Reminders Sent by Type (yesterday)");
 		

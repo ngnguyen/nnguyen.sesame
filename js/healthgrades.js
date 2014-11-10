@@ -15,7 +15,7 @@ function displayAvgRating(data){
 			numResponse = parseNumAr(numResponse[0]);
 			avgRating = parseNumAr(avgRating[0])[0].toFixed(1);
 			
-			console.log(avgRating);
+			//console.log(avgRating);
 			
 			$("#no-of-response span").text(numResponse);
 			var temp = (avgRating*100/5);
@@ -37,7 +37,7 @@ function displayRatings(data){
 		var ratingAr = parseNumAr(parseArray(data.ratings));
 		
 		// console.log(fNameAr.length);
-		console.log('fnamear '+fNameAr);
+		//console.log('fnamear '+fNameAr);
 		
 		if (fNameAr.length < 1 || lNameAr.length < 1 || dateAr.length < 1){
 			
