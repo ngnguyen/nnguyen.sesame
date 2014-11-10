@@ -3,7 +3,7 @@ function displayKeywords(data){
 	if (!(data.kw) || !(data.current) || !(data.last) || !(data.months)){
 		dataUnavailable($(".seo .banner-col:nth-child(1)"), "Top Keyword Rankings");
 	} else {
-		var kwAr = capitalizeFirstLetter(parseArray(data.kw));
+		var kwAr = parseArray(data.kw);
 		var currentAr = parseNumAr(parseArray(data.current));
 		var lastAr = parseNumAr(parseArray(data.last));
 		var monthAr = capitalizeFirstLetter(parseArray(data.months));
