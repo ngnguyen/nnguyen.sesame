@@ -287,20 +287,23 @@ function irregularIntervalChart(){
             //type: 'spline'
         },
 		title:{
+			align:'left',
+			x:0,
+			y:45,
 			style: {
 				color: "#06577A",
-				fontSize: "15px",
+				fontSize: "20px",
 				fontWeight: "bold"
 			}
 		},
         xAxis: {
             type: 'datetime',
-			pointInterval: 24 * 3600 * 1000,
+			tickInterval: 15*24*3600 * 1000,
             pointStart: Date.UTC(2014, 7, 26),
-            dateTimeLabelFormats: { // don't display the dummy year
-                
-				month: '%b %e'
-                //year: '%b'
+			startOnTick:true,
+            dateTimeLabelFormats: { // don't display the dummy year  
+				month: '%b %e',
+                year: '%b'
             }
         },
         yAxis: {
@@ -308,10 +311,11 @@ function irregularIntervalChart(){
 			title: {text:null}
         },
 		legend: {
-			//align: 'center',
+			//align: 'right',
 			verticalAlign: 'top',
 			y: 30,
-			itemDistance: 100,
+			x:190,
+			itemDistance: 50,
 			itemMarginBottom:5,
 			symbolWidth:15,
 			symbolHeight:15,

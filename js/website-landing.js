@@ -74,6 +74,20 @@ $(document).ready(function(){
 	};
 	drawTable($('#visits-by-location'), visitsByLocation);
 	
+	
+	// draw Top Content By Pageviews table
+	var contentByPageviews = {
+		"title": "",
+		"heading": ["Top Content By Pageviews", "Pageviews", "% Of Total Views"],
+		"content": [
+			["/meet-the-doctor",116, "18.80%"],
+			["/dentalexams-and-cleanings",102, "16.53%"],
+			["/invisalign-info",98, "15.88%"],
+			["/your-child-s-first-orthodontic-checkup",95, "18.80%"],
+			["/carriere-self-ligating-bracket-system",69, "11.18%"]
+		]
+	};
+	drawTable($('#content-by-pageviews'), contentByPageviews);	
 });
 
 function drawWebStat(){
