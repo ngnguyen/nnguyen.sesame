@@ -1,0 +1,57 @@
+jsoncallback({
+	"data" :
+	{
+		"note": "fake set of data for demo environment or other purposes. These data is for MD landing pages",
+		"healthgrades": {
+			"practiceTbl": {"name": "Overlake Family Dentistry", "rating": '5'} ,
+			"dentistTbl": [
+				{'name': "Dr. Leonard Hofsteder", 'rating':4},
+				{'name': "Dr. Leonard Hofsteder", 'rating':4},
+				{'name': "Dr. Leonard Hofsteder", 'rating':4},
+				{'name': "Dr. Leonard Hofsteder", 'rating':4},
+				{'name': "Dr. Leonard Hofsteder", 'rating':4},
+				{'name': "Dr. Leonard Hofsteder", 'rating':4}
+				
+			],
+			"patientTbl": [
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 },
+				{ 'fName': 'Sweeney', 'lName': 'Jason', 'date':'Sep 25 2014', 'rating': 4 }
+				
+			],
+			"callTracking": [
+				{ "desc":"Total Calls", 'current':48, 'last': 32 },
+				{ "desc":"Unique Callers", 'current':48, 'last': 32 },
+				{ "desc":"Calls Lasting 3+ Minutes", 'current':48, 'last': 32 },
+				{ "desc":"Total Talk Time", 'current':48, 'last': 32 },
+				{ "desc":"Average Call Length", 'current':48, 'last': 32 },
+				{ "desc":"Average Time to Answer", 'current':48, 'last': 32 },
+				{ "desc":"Longest Call", 'current':48, 'last': 32 }
+			],
+			"callsByStatus": [
+				{ 'Answered': '47(97.92%)'},
+				{ 'Hangup': '1(2.08%)'},
+				{ 'Busy': '0(0.00%)'}
+			],
+			"trafficData": [
+				{ 'desc':'Total Impressions', 'current':11, 'last':22 },
+				{ 'desc':'Unique Visitors', 'current':11, 'last':22 },
+				{ 'desc':'Surveys Published', 'current':11, 'last':22 },
+				{ 'desc':'New Online Appointments Requests', 'current':11, 'last':'--' }
+			]
+		}
+	}
+})

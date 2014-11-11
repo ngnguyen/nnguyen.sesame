@@ -1,5 +1,7 @@
 "use strict";
 
+var fakeLandingDataUrl = "https://s3.amazonaws.com/sesame-test-content/global_images/product_tiles/data-landing.json?callback=?"
+
 // make month picker and year picker
 function makeMonthYrPicker(){
     var yrLimit = 5;

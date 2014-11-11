@@ -22,5 +22,5 @@
 #visits-by-location {margin-right:0;}
 #content-by-pageviews tr:nth-child(even) {background:#f2f2f2;}
 
-.sesame-edit-wrapper {width:70%;margin-left:auto;margin-right:auto;}
-.sesame-edit-wrapper img {width:100%;}
+.sesame-edit-wrapper { width:70%;margin-left:auto;margin-right:auto; }
+.sesame-edit-wrapper img { width:100%; }
