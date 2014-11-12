@@ -1,0 +1,143 @@
+
+	
+	.practice, .dentists, .patients {
+		margin-bottom:10px;
+	}
+	.practice table, .dentists table, .patients table {
+		border-spacing:0;
+		width:100%;
+	}
+	.practice table th, .dentists table th, .patients table th {
+		background:#00A7E5;height:30px;font-size:14px;
+		color:#fff;border-collapse:collapse;font-weight:bold;
+	}
+	.practice table th:first-child, 
+	.dentists table th:first-child {
+		width:200px;
+		/*border:1px solid green;*/
+	}
+	.patients table th:first-child  {width:140px;}
+	.patients table th:first-child + th {width:62px;}
+	
+	.practice table th:first-child+th, 
+	.dentists table th:first-child+th {
+		width:120px;
+		/*border:1px solid orange;*/
+	}
+	.practice table tr, 
+	.dentists table tr,
+	.patients table tr{
+		height:28px;
+	}
+	
+	.practice table tr td, .dentists table tr td {
+		color:#6a747c;padding:8px;font-size:14px;
+	}
+	
+	
+	.patients .table-wrapper {height:282px;overflow-x:none;overflow-y:scroll;}
+	.patients .table-header {
+		background:#00A7E5;height:30px;vertical-align:middle;
+	}
+	.patients .table-header span {
+		display:inline-block;font-size:14px;color:#ffffff;
+		font-weight:bold;height:30px;line-height:30px;
+	}
+	.patients .table-header span:first-child {width:140px;padding-left:10px;}
+	.patients .table-header span:nth-child(2) {width:62px;}
+	.patients .table-header span:nth-child(3) {padding-left:30px;}
+	
+	.patients table {width:100%;}
+	.patients table tr td:first-child {width:130px;padding-left:10px;text-decoration:underline;}
+	.patients table tr td:nth-child(2) {width:62px;}
+	.patients table tr td {font-size:11px;color:#6a747c;}
+	.patients table tr:nth-child(even) {background:#f2f2f2;}
+	
+	
+	.dentists .table-wrapper, .patients .table-wrapper {
+		overflow-y:scroll;overflow-x:hidden;
+	}
+	
+	.practice table {height:60px;}
+	.practice table tr:first-child {height:30px;}
+	.practice table tr:nth-child(2) {height:60px;}
+	.practice table tr th:first-child {text-align:left;padding-left:10px;}
+	.practice table tr td:first-child + td {padding-right:25px;}
+	.practice .sm-rating-wrapper {width:60%;}
+	
+	.dentists {height:210px;}
+	.dentists table tr:first-child td {padding-top:12px;}
+	
+	
+	.calls, .traffic, .tracking {margin-bottom:35px;}
+	
+	.tracking h2, .traffic h2 {
+		font-size:22px;color:#06577a;margin-bottom:22px;
+		font-weight:bold;
+	}
+	
+	.calls table {width:100%;background:#f2f2f2;border-collapse:collapse;border-spacing:0;}
+	.calls table caption {
+		font-size:14px;color:#6a747c;font-weight:bold;background:#f2f2f2;
+		height:35px;line-height:35px;
+	}
+	.calls table tr:first-child + tr {height:40px;}
+	.calls table tr td {font-size:15px;width:16%;color:#6a747c;text-align:center;}
+	.calls table tr td:nth-child(even) {color:#06577a;font-weight:bold;}
+	.calls table tr td:nth-child(even) span:first-child {margin-right:5px;}
+	
+	.sm-stars{width:100%;height:100%;z-index: 10;position:absolute;top:0;left:0;}
+	.sm-rating-wrapper{ 
+		border:1px solid #ccc;border-radius:5px;
+		margin-right:auto;margin-left:auto;
+	}
+	.dentists .sm-rating-wrapper {width:55px;}
+	.patients .sm-rating-wrapper {width:46px;}
+	.patients .sm-rating-wrapper {padding-right:9px;margin-right:10px;}
+	
+	.back {background:#e7ed64;width:100%;height:100%;border-radius:8px;}
+	.sm-rating {width: 55px;height: 17px;position:relative;}
+	.sm-stars {background: url(../img/star-frame-sm.png);}
+	.sm-rating-wrapper {margin-right:4px;}
+	.sm-rating:after {
+		position:absolute;font-size:10px;bottom:-7px;right:0;
+		margin-bottom:-0.9em;display:block;
+		color:#ccc;z-index:3;
+		content:url(../img/rating-arrow-sm.png);
+	}
+	
+	.col {float:left;/*border:1px solid green;*/}
+	.col:first-child {margin-right:15px;width:315px;}
+	.col:first-child + .col {width:340px;}
+	
+	.tracking table, .traffic table {border-spacing:0;width:100%;}
+	.tracking table tr, .traffic table tr {height:28px;}
+	.tracking table tr th, .traffic table tr th {
+		font-size:15px;text-align:left;
+	}
+	.tracking table tr td:first-child, .traffic table tr td:first-child {
+		color:#6a747c;width:60%;padding-left:7px;
+	}
+	.tracking table tr td, .traffic table tr td {
+		color:#06577a;font-size:15px;
+	}
+	.tracking table tr td:first-child, .traffic table tr td:first-child {
+		color:#6a747c;font-size:15px;
+	}
+	.tracking table tr:nth-child(even), 
+	.traffic table tr:nth-child(even) {
+		background:#f2f2f2;border-collapse:collapse;
+	}
+	
+.dentists .table-header {
+		background:#00A7E5;height:30px;vertical-align:middle;
+	}
+	.dentists .table-header span {
+		display:inline-block;font-size:14px;color:#ffffff;
+		font-weight:bold;height:30px;line-height:30px;
+	}
+	.dentists .table-header span:first-child {width:195px;padding-left:10px;}
+	.dentists .table-wrapper {height:180px;overflow-x:hidden;overflow-y:scroll;}
+	.dentists table tr td:first-child {width:200px;}
+	.dentists table tr td:nth-child(2) {width:115px;}
+	.calls table {height:40px;}

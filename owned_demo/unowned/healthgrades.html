@@ -1,0 +1,243 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js"></script>
+
+<script src="../js/shared-functions.js"></script>
+<script src="../js/unowned.js"></script>
+
+<link href="../css/shared.css" rel="stylesheet" type="text/css" />
+<link href="../css/unowned.css" rel="stylesheet" type="text/css" />
+
+<div class="bottom">
+	<div class="unowned-tile healthgrades">
+		<div class="title" >Learn about Healthgrades</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="marketing-msg">
+				Enjoy the benefits of priority access to prospective patients 
+				searching for a new dental care provider on Healthgrades.com.
+			</div>
+			<!-- <div class="click-through">Click here to review features and benefits</div> -->
+			<div class='more-info'></div>
+			<div class="logo" >
+				<span>Healthgrades Enhanced Profiles</span>
+				<span><img src="../img/md-marketing-healthgrades-icon.png" alt="healthgrades icon"/></span>
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class="top" style="background:#fff;">
+	<div class="unowned-tile healthgrades">
+		<div class="bottom-title" >Learn about Healthgrades</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="banner-col">
+				<div class="header">Average Rating For Practice</div>
+				<div class="aggregate-rating">
+					<div class="lg-rating-wrapper" >
+						<div class="lg-rating">
+							<div class="lg-stars"></div>
+							<div id="avg-rating" class="back" style="width:87%;"></div>
+						</div>
+					</div>
+					<div id="no-of-response"><span>35</span> Responses</div>
+				</div>
+			</div>	
+	
+		</div>
+	</div>	
+</div>
+
+	
+<script>
+$(document).ready(function(){
+	moreInfoMsg();
+});
+/*
+$(document).ready(function() {
+	
+	var qryStr = getUrlVars();
+	//alert(defaultData.healthgrades);
+	
+	//console.log(qryStr);
+	displayAvgRating(qryStr);	
+	displayRatings(qryStr);	
+	
+	$("#healthgrades").click({destination: "/#patients/doctor-survey"}, navigateTo);
+	
+});
+
+function dataUnavailable(chartFrame, chartTitle){
+	chartTitle = typeof chartTitle !== 'undefined' ? chartTitle : ''; 
+	chartFrame.html('<div class="data-unavailable-header" style="color:#ccc;">'+chartTitle+'</div>'
+		+'<div class="error-msg">'
+			+'<div>Data is currently unavailable at this time.</div>'
+			+'<div>Please check back later</div>'
+		+'</div>');
+}
+function navigateTo(e){
+	var destination = e.data.destination;
+	var url = window.location.host;
+	//alert(url+destination);
+	window.parent.location.href = url+destination;
+}
+
+function displayAvgRating(data){
+	if (!(data.numRes) || !(data.avgRating)){ 
+		dataUnavailable($(".healthgrades .banner-col:nth-child(1)"), "Average Rating For Practise");
+	
+	}else{
+		var numResponse = parseNumAr(parseArray(data.numRes))[0];
+		var avgRating = parseNumAr(parseArray(data.avgRating))[0];
+		
+		$("#no-of-response span").text(numResponse);
+		$("#avg-rating").css("width", (avgRating*100/5+"%"));
+	}
+}
+
+function displayRatings(data){
+	if (!(data.fNames) || !(data.lNames) || !(data.dates) || !(data.ratings)){
+		dataUnavailable($(".healthgrades .banner-col:nth-child(2)"), "Recent Patient Reviews");
+
+	}else{	
+		var fNameAr = capitalizeFirstLetter(parseArray(data.fNames));
+		var lNameAr = capitalizeFirstLetter(parseArray(data.lNames));
+		var dateAr = parseArray(data.dates);
+		var ratingAr = parseNumAr(parseArray(data.ratings));
+		
+		// wipe out hard-coded values
+		$("#recent-reviews").html("");
+		
+		// inject values if they are passed in url
+		$.each(ratingAr, function(i, v){
+			$("#recent-reviews").append(
+				"<tr>"
+					+"<td>"+fNameAr[i]+", "+lNameAr[i]+"</td>"
+					+"<td>"+moment(dateAr[i], "MM-DD-YYYY").format("MMM DD YYYY")+"</td>"
+					+"<td>"
+						+"<div class='sm-rating-wrapper'>"
+							+"<div class='sm-rating'>"
+								+"<div class='sm-stars'></div>"
+								+"<div class='back' style='width:"+(ratingAr[i]*100/5)+"%;'></div>"
+							+"</div>"
+						+"</div>"
+					+"</td>"
+				+"</tr>");	
+		});
+	}
+}
+
+// capitalize first letter
+function capitalizeFirstLetter(data){
+	var temp = [];
+	
+	try {
+		if (typeof data == "string" || data instanceof String){
+			return data.charAt(0).toUpperCase() + data.slice(1);
+		}else if (Array.isArray(data) || data instanceof Array){
+			for (var i=0; i<data.length; i++){
+				temp.push(data[i].charAt(0).toUpperCase() + data[i].slice(1));
+				//console.log(temp);
+			}
+			return temp;
+		}
+	}catch(e){
+		console.log(e);
+	}	
+}
+
+// Read a page's GET URL variables and return them as an associative array.
+function getUrlVars() {
+	var defaultData = {
+		"ortho": 
+			{
+				"days":"[mon,tue,wed,thu,fri,sat,sun]",
+				"totalAppt":	"[30,22,15,17,20,25,5]",
+				"confirmedAppt":"[20,18,13,15,20,18,3]",
+				"noShow":'[10,4,2,2,0,7,2]',
+				"email":"[24]",
+				"text":"[15]",
+				"phone":"[27]"
+			},
+		"dental": 
+			{
+				"days":"[mon,tue,wed,thu,fri,sat,sun]",
+				"totalAppt":	"[30,22,15,17,20,25,5]",
+				"confirmedAppt":"[20,18,13,15,20,18,3]",
+				"noShow":'[10,4,2,2,0,7,2]',
+				"email":"[24]",
+				"text":"[15]",
+				"phone":"[27]"
+			},
+		"healthgrades": 
+			{
+				"numRes":"[30]",
+				"avgRating":"[4]",
+				"ratings":"[5,4,4,3,4]",
+				"fNames":"[Jason,patrica,samantha,cambren,ellen]",
+				"lNames":"[sweeney,bahlow,avellino,kronberger,bysczynski]",
+				"dates":"[1-2-2014,3-12-2014,4-29-2014,5-9-2014,9-1-2014]"
+			},
+		"social": 
+			{
+				"months":"[may,jun,jul,aug,sep,oct,nov]",
+				'numLikes':'[234,256,233,100,256]',
+				'reach':'[500,560,544,533,400,450]',
+				'engagement':"[433,460,460,512,377,412]"
+			},
+		"seo": 
+			{ 
+				"kw":"[braces,orthodontist,teeth straitening,adult braces,best orthodentists]",
+				"current":"[12,45,67,99,999]",
+				"lastWeek":"[33,45,50,0,290]",
+				"cities":"[seattle,mountlake terrace,metropolitan,basin city,metropolitan]",
+				"pageViews":"[500,514,555,600,355]"
+			},
+		"website": 
+			{
+				'days':'[tues,wed,thurs,fri,sat,sun,mon]',
+				'numVis':'[245,267,300,345,368,389,400]',
+				'sites':'[google.com,bing.com,healthgrades.com,invisalign.com,yahoo.com]',
+				'current':'[500,445,400,389,350]',
+				'lastWeek':"[480,470,389,350,300]"
+			}
+	};
+	
+	var urlParams;
+	
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+    
+	urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+	
+	//console.log(urlParams);
+	//console.log(defaultData.seo);
+	
+	//if (urlParams.demoMode=="y") { urlParams = defaultData.healthgrades; } 
+	urlParams = defaultData.healthgrades;
+	
+	return urlParams;
+}
+
+function parseArray(rawData){
+	//take everything except first and last character
+	return rawData.substring(1, rawData.length-1).split(",") 
+}
+
+function parseNumAr(data){
+	var result = [];
+	for (var i=0; i < data.length; i++){
+		//console.log(data[i]);
+		result.push(parseFloat(data[i]));
+	}
+	return result;
+}
+*/
+</script>

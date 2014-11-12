@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="../js/shared-landing.js"></script>
+	<script src="../js/healthgrades-landing.js"></script>
+
+	<link href="../css/shared-landing.css" rel="stylesheet" type="text/css" />
+	<link href="../css/healthgrades-landing.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="landing-pg-healthgrades">
+<div class="content-wrapper">
+	<div class="col">
+		<div class="practice">
+			<table>
+				<tr><th>Practice</th><th>Average Rating</th></tr>
+				<tr>
+					<td class='name'></td>
+					<td class='rating'>	
+						<div class="sm-rating-wrapper">
+							<div class="sm-rating">
+								<div class="sm-stars"></div>
+								<div class="back" style="width:0%;"></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="dentists">
+			<div class="table-header">
+				<span>Dentist</span>
+				<span>Average Rating</span>
+			</div>
+			
+			<div class="table-wrapper"><table></table></div>
+		</div>
+	</div>
+	
+	<div class="col">
+		<div class="patients">
+			<div class="table-header">
+				<span>Patient</span>
+				<span>Date</span>
+				<span>Rating Given</span>
+			</div>
+			
+			<div class="table-wrapper"><table></table></div>
+		</div>
+	</div>	
+	
+</div>
+
+<div class="content-wrapper report">
+	<div class="header">
+		<div>
+			<span class="title">Heathgrades Performance</span>			
+			<span class="download-pdf">
+				<span><a href="#">Download PDF</a></span>
+				<img alt="pdf icon" src="../img/pdf_icon.jpg" />
+			</span>
+			<!--
+			<span>
+				Monthly Report: 
+				<select class="month-picker"></select>
+				<select class="yr-picker"></select>
+				<button class="btn">Go</button>
+			</span>
+			-->
+		</div>
+		<div class='url'>
+			<a href="http://overlakefamilydentistry.com/" >
+				www.overlakefamilydentistry.com
+			</a>
+		</div>
+		<div class="date">September 2014</div>
+	</div>
+	
+	<div class="tracking">
+		<h2>Call Tracking Data</h2>
+		<table></table>	
+	</div>
+	
+	<div class="calls">
+		<table>
+			<caption>CALLS BY STATUS THIS MONTH</caption>
+			<tr></tr>
+		</table>
+	</div>
+	
+	<div class="traffic">
+		<h2>Trafic Data</h2>
+		<table></table>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js"></script>
+
+<script src="../js/shared-functions.js"></script>
+<script src="../js/unowned.js"></script>
+
+<link href="../css/shared.css" rel="stylesheet" type="text/css" />
+<link href="../css/unowned.css" rel="stylesheet" type="text/css" />
+	
+<div class="bottom">
+	<div class="unowned-tile website" >
+		<div class="title" >Learn about Website</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="marketing-msg">
+				Discover the power of a research-based practice website built exclusively for 
+				dentistry and optimized for use on smartphones and tablets
+			</div>	
+			<!-- <div class="click-through">Click here to review features and benefits</div> -->
+			<div class='more-info'></div>
+			<div class="logo" >
+				<span>Sesame Website Design</span>
+				<span><img src="../img/md-marketing-website-icon.png" alt="healthgrades icon"/></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="top">
+	<div class="unowned-tile website" >
+		<div class="bottom-title" >Learn about Website</div>
+		
+		<div class="banner-col-wrapper">
+			<div class="banner-col">
+				<div class="header">Daily Visits (last 7 days)</div>
+			<div id="daily-visitor-bars" style="width:335px;height:145px; margin:0;"></div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+<script>
+"use strict";
+
+$(document).ready(function() {
+	moreInfoMsg();
+	// syntax for using ajax request for jsonp
+	$.ajax({
+		type: "GET",
+		url: window.fakeDataUrl,
+		dataType: 'jsonp',
+		jsonpCallback: 'jsoncallback',
+		success: function(result){
+			drawDailyVisitors(result.data.website);
+		},
+		error : function(httpReq,status,exception){
+			console.log(status+" "+exception);
+		}
+	});
+	
+	//$("#website").click({destination: "/#websites/websites-statistics"}, navigateTo);
+});
+
+function drawDailyVisitors(data) {
+	if (!(data.days) || !(data.numVis)){
+		dataUnavailable($('.website .banner-col:nth-child(1)'), "Daily Visitors (Last Seven Days)");
+	
+	}else{
+		/*
+		var dayAr = parseArray(data.days); 
+		dayAr = capitalizeFirstLetter(dayAr);
+		
+		var tempNumVis = parseArray(data.numVis);
+		var numVisAr = parseNumAr(tempNumVis);
+		*/
+		
+		var dayNames = ['sun','mon','tue','wed','thu','fri','sat'];
+		var numVisArTemp = {'sun':7,'mon':200,'tue':120,'wed':150,'thu':110,'fri':65,'sat':10};
+		
+		var dayAr = [];
+		var currentDay = new Date().getDay();
+		
+		//testing
+		//currentDay=6;
+		
+		var i = currentDay+1;
+		
+		while (!(dayAr[6])){
+			if (i<7){
+				dayAr.push(dayNames[i]);
+				i++;
+			}else{
+				i=0;
+				dayAr.push(dayNames[i]);
+				i++;
+			}
+		}
+		
+		var numVisAr = [];
+		$.each(dayAr, function(i, v){
+			numVisAr.push(numVisArTemp[v]);
+		});
+		
+		dayAr = capitalizeFirstLetter(dayAr);
+		
+		$('#daily-visitor-bars').highcharts({
+			title: {
+				text: ''
+			},
+			colors: [
+				"#ccc",
+			],
+			subtitle: {
+				text: ''
+			},
+			xAxis: {
+				categories: dayAr,
+				labels: {
+					style: {
+						color: '#ccc',
+						fontSize: '13px'
+					}
+				}
+			},
+			yAxis: {
+				min:0,
+				title: '',
+				//tickInterval:10,
+				gridLineColor: '#ccc',
+				labels: {
+					style: {
+						color: '#ccc',
+						fontSize: '11px'
+					}
+				}
+			},
+			tooltip: {		
+				/*headerFormat: '<table>',
+				pointFormat: '<tr><td style="font-size:12px;"><b>{point.y}</b> Likes</td></tr>',
+				footerFormat: '</table>',
+				shared: true,
+				useHTML: true*/
+				enabled: false
+			},
+			legend: {
+				enabled: false
+			},
+			series: [{
+			   // name: 'London',
+				data: numVisAr,
+				marker: { 
+					fillColor: '#ccc'
+				}
+			}],
+			exporting: {
+				enabled: false
+			},
+			 credits: {
+				enabled: false
+			}
+		});
+		
+	
+	}
+}
+
+</script>
