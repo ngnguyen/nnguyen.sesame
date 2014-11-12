@@ -6,15 +6,15 @@ function drawTopReferringSites(data){
 		var currentAr = parseNumAr(parseArray(data.current));
 		var lastAr = parseNumAr(parseArray(data.last));
 		var siteAr = parseArray(data.sites);
-		var monthAr = capitalizeFirstLetter(parseArray(data.months));
+		//var monthAr = capitalizeFirstLetter(parseArray(data.months));
 		
-		if(currentAr.length<1 || lastAr.length<1 || siteAr.length<1 || monthAr.length<1){
+		if(currentAr.length<1 || lastAr.length<1 || siteAr.length<1 /*|| monthAr.length<1*/){
 			
 			noValueMsg($('.website .banner-col:nth-child(2)'));
 		}else{
 		
-			$('#referring-sites .m_cur').text(monthAr[0]);
-			$('#referring-sites .m_prev').text(monthAr[1]);
+			//$('#referring-sites .m_cur').text(monthAr[0]);
+			//$('#referring-sites .m_prev').text(monthAr[1]);
 			
 			$.each(currentAr, function(i, v){
 				var diff = (currentAr[i]-lastAr[i]);

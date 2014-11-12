@@ -74,9 +74,9 @@ function lineChart(){
 			}
 		},
 		series: [],
-		// exporting: {
-			// enabled: false
-		// },
+		exporting: {
+			enabled: false
+		},
 		 credits: {
 			enabled: false
 		}
@@ -153,9 +153,9 @@ function pieChart(){
 				['Others',   0.7]
 			]
 		}],
-		// exporting: {
-			// enabled: false
-		// },
+		exporting: {
+			enabled: false
+		},
 		credits: {
 			enabled: false
 		}

@@ -69,3 +69,46 @@ function injectPatientTbl(data){
 			+'</tr>');  
 	});
 }
+
+function injectCallTracking(data){
+	//console.log(data);
+	
+	$('.tracking table').append('<tr>'
+			+'<th>Type</th><th>'+data.months.current+'</th>'
+			+'<th>'+data.months.last+'</th>'
+		+'</tr>');
+	
+	$.each(data.details, function(i, v){
+		$('.tracking table').append('<tr>'
+			+'<td>'+v.desc+'</td>'
+			+'<td>'+v.current+'</td>'
+			+'<td>'+v.last+'</td>'
+		+'</tr>');
+	});
+}
+
+function injectTrafficData(data){
+	//console.log(data);
+	
+	$('.traffic table').append('<tr>'
+			+'<th>Type</th><th>'+data.months.current+'</th>'
+			+'<th>'+data.months.last+'</th>'
+		+'</tr>');
+	
+	$.each(data.details, function(i, v){
+		$('.traffic table').append('<tr>'
+			+'<td>'+v.desc+'</td>'
+			+'<td>'+v.current+'</td>'
+			+'<td>'+v.last+'</td>'
+		+'</tr>');
+	});
+}
+
+function injectCallsByStatus(data){
+	$.each(data, function(i,v){
+		$('.calls table tr').append('<td>'+v.desc+'</td>'
+			+'<td><span>'+v.stat+'</span>'
+			+'<span>('+v.percentage+'%)</span></td>'
+		);
+	});
+}
