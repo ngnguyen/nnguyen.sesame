@@ -74,7 +74,7 @@ jsoncallback({
 				]
 			},
 			'organicTrafficTbl': {
-				'months': {'current':'Sep', 'last':'Aug'},
+				'headings': ['From Organic Traffic', 'Sep', 'Aug'],
 				'details': [
 					{'desc': 'Total Calls', 'current':48, 'last':32},
 					{'desc': 'New Patient Calls', 'current':28, 'last':24},
@@ -88,7 +88,7 @@ jsoncallback({
 				'patientCalls': [10,15,20,30,40,60,35,100,110,130,150,200]
 			},
 			'paidTrafficTbl': {
-				'months': {'current':'Sep', 'last':'Aug'},
+				'headings': ['From Paid Traffic', 'Sep', 'Aug'],
 				'details': [
 					{'desc': 'Total Calls', 'current':48, 'last':32},
 					{'desc': 'New Patient Calls', 'current':28, 'last':24},
@@ -102,12 +102,14 @@ jsoncallback({
 				'patientCalls': [10,15,20,30,40,60,35,100,110,130,150,200]
 			},
 			'overallReviewsTbl': { 
+				'headings': ['Overall Reviews', '', ''],
 				'details': [
 					{'desc': 'Total Reviews', 'rating':8},
 					{'desc': 'Average Rating', 'rating':'5.00'}
 				]
 			},
 			'networkByNoOfReviewsTbl': {
+				'headings': ['Top Network By Number of Reviews', 'Total Reviews', 'Average Rating'],
 				'details': [
 					{'desc': 'Healthgrades', 'reviews':5, 'rating':'5.00'},
 					{'desc': 'Average Rating', 'reviews':3, 'rating':'5.00'}

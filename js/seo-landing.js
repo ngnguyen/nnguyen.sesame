@@ -13,12 +13,12 @@ $(document).ready(function(){
 		jsonpCallback: 'jsoncallback',
 		success: function(result){
 			injectTopKwRanking(result.data.seo.kwRankingTbl);
-			injectTblContent(result.data.seo.organicTrafficTbl, $('#first-call-content'), 'From Organic Traffic');
-			injectChart("Calls Over Time From Organic Source", result.data.seo.organicTrafficChart,"calls-over-time-from-organic-src");
-			injectTblContent(result.data.seo.paidTrafficTbl, $('#first-call-content'), 'From Paid Traffic');
-			injectChart("Calls Over Time From Paid Source", result.data.seo.paidTrafficChart,"calls-over-time-from-paid-src");
+			injectTblContent(result.data.seo.organicTrafficTbl, $('#first-call-content'));
+			injectChart("Calls Over Time From Organic Source", result.data.seo.organicTrafficChart,"organic-src-calls");
+			injectTblContent(result.data.seo.paidTrafficTbl, $('#first-call-content'));
+			injectChart("Calls Over Time From Paid Source", result.data.seo.paidTrafficChart,"paid-src-calls");
 			injectTblContent(result.data.seo.overallReviewsTbl, $('#review-monitor-content'), 'Overall Reviews');
-			injectTblContent(result.data.seo.networkByNoOfReviewsTbl, $('#review-monitor-content'), 'Overall Reviews');
+			injectTblContent(result.data.seo.networkByNoOfReviewsTbl, $('#review-monitor-content'));
 			
 			assignBgColor($(".kw-table .this-month"));
 			assignBgColor($(".kw-table .last-month"));
@@ -46,18 +46,12 @@ function injectTopKwRanking(data){
 	});
 }	
 	
-function injectTblContent(data, tag, heading){
-	var tbl = new Object();
-	var current = '';
-	var last = '';
+function injectTblContent(data, tag){
+	var tbl = { heading:[], content:[] };
 	
-	if ((typeof data.months) != 'undefined') {
-		current = data.months.current;
-		last = data.months.last;
-	}
-	
-	tbl.heading = [heading, current, last];
-	tbl.content = [];
+	$.each(data.headings, function(i, v){
+		tbl.heading.push(v);
+	});
 	
 	$.each(data.details, function(i, v){
 		var x = []

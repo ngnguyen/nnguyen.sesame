@@ -1,3 +1,4 @@
+#landing-pg-seo .content-wrapper {padding-bottom:15px;}
 .kw-table th {text-align:left;}
 .kw-table tr:nth-child(even) td:first-child {background-color:#f2f2f2;}
 .kw-table tr td {height:27px;border-bottom:1px solid #ffffff;}
@@ -61,3 +62,4 @@ table tr:nth-child(even) {background-color:#f2f2f2;}
 .traffic-by-location-tbl, .overall-reviews-tbl {margin-bottom:30px;}
 .review-note {font-size:12px;color:6A747C;text-align:right;}
 #landing-pg-seo .title {margin-bottom:15px;}
+#review-monitor-content table.num-col-3:nth-child(2) tr th:nth-child(2) {width:320px;}
