@@ -2,3 +2,6 @@
 #fb-activity-over-time {height:280px;margin-bottom:30px;}
 #blog-page-views-over-time {height:250px;margin-bottom:30px;}
 #yt-video-views-over-time {height:250px;margin-bottom:30px;}
+#landing-pg-social .content-wrapper {padding:15px;}
+
+table tr:nth-child(odd) {background:#f2f2f2;}

@@ -300,17 +300,23 @@ function irregularIntervalChart(){
 		},
         xAxis: {
             type: 'datetime',
-			tickInterval: 15*24*3600 * 1000,
+			tickInterval: 15*24*3600*1000,
             pointStart: Date.UTC(2014, 7, 26),
 			startOnTick:true,
             dateTimeLabelFormats: { // don't display the dummy year  
 				month: '%b %e',
                 year: '%b'
-            }
+            },
+			labels: {
+				style: {fontSize:'12px', color:'#065679'}
+			}
         },
         yAxis: {
             min: 0,
-			title: {text:null}
+			title: {text:null},
+			labels: {
+				style: {fontSize:'12px', color:'#065679'}
+			}
         },
 		legend: {
 			//align: 'right',
@@ -322,7 +328,7 @@ function irregularIntervalChart(){
 			symbolWidth:15,
 			symbolHeight:15,
 			symbolPadding:15,
-			itemStyle:{ color: '#065679' }
+			itemStyle:{ color: '#065679', fontSize:'14px', fontWeight:'normal' }
 		},
 		credits: { enabled: false },
 		exporting: { enabled: false },
@@ -409,9 +415,10 @@ function columnChart(){
 		},
 		title: {
 			text: '',
+			//margin:35,
 			style: {
 				color: '#06567A',
-				fontSize: '12px',
+				fontSize: '14px',
 				fontWeight: 'bold'
 			}
 		},
@@ -421,10 +428,11 @@ function columnChart(){
 			symbolWidth: 12,
 			symbolHeight: 12,
 			y: 20,
-			itemDistance:60,
+			itemDistance:50,
+			itemMarginBottom:5,
 			itemStyle: { 
 				color: "#06567A", 
-				fontSize: "12px",
+				fontSize: "14px",
 				fontWeight: "bold",
 				fontFamily: "\"Trebuchet MS\", arial, helvetica, sans-serif;"  
 			}
@@ -443,6 +451,7 @@ function columnChart(){
 			min:0,
 			gridLineColor: '#06567A',
 			labels: {
+				x: -8,
 				style: {
 					color: '#06567A',
 					fontSize: '11px'
